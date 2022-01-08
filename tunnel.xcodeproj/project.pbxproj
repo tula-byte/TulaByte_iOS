@@ -20,6 +20,15 @@
 		DC38B04125D3641700012733 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
 		DC38B04225D3641700012733 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
 		DC3C93072647871D007641A8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C93062647871D007641A8 /* StoreKit.framework */; };
+		DC448142277325D500025BD3 /* TunnelKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC448141277325D500025BD3 /* TunnelKit */; };
+		DC448144277325D500025BD3 /* TunnelKitIKE in Frameworks */ = {isa = PBXBuildFile; productRef = DC448143277325D500025BD3 /* TunnelKitIKE */; };
+		DC448146277325D500025BD3 /* TunnelKitLZO in Frameworks */ = {isa = PBXBuildFile; productRef = DC448145277325D500025BD3 /* TunnelKitLZO */; };
+		DC448148277325D500025BD3 /* TunnelKitOpenVPN in Frameworks */ = {isa = PBXBuildFile; productRef = DC448147277325D500025BD3 /* TunnelKitOpenVPN */; };
+		DC44814A277325D500025BD3 /* TunnelKitOpenVPNAppExtension in Frameworks */ = {isa = PBXBuildFile; productRef = DC448149277325D500025BD3 /* TunnelKitOpenVPNAppExtension */; };
+		DC5C4AD827880EB9009A154C /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4AD727880EB9009A154C /* ListItem.swift */; };
+		DC5C4AD927880EB9009A154C /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4AD727880EB9009A154C /* ListItem.swift */; };
+		DC5C4ADB278932F6009A154C /* allowlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC5C4ADA278932F6009A154C /* allowlist.txt */; };
+		DC5C4ADC278932F6009A154C /* allowlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC5C4ADA278932F6009A154C /* allowlist.txt */; };
 		DC62BD1D25DE27EA0091E991 /* TunnelUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2F90125C8DE2F0049D9EF /* TunnelUtilities.swift */; };
 		DC642C742612B42200CF2C51 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C732612B42200CF2C51 /* WelcomeViewController.swift */; };
 		DC642C7A2612C41D00CF2C51 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C792612C41D00CF2C51 /* SubscribeViewController.swift */; };
@@ -72,6 +81,16 @@
 		DCC9158C25DB867D00F543FF /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DCC9157C25DB867B00F543FF /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DCC9159425DB869E00F543FF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DCC9159325DB869E00F543FF /* Realm */; };
 		DCC9159625DB869E00F543FF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DCC9159525DB869E00F543FF /* RealmSwift */; };
+		DCD6BA06274A072C000928D1 /* Yaml in Frameworks */ = {isa = PBXBuildFile; productRef = DCD6BA05274A072C000928D1 /* Yaml */; };
+		DCD6BA08274A077A000928D1 /* Yaml in Frameworks */ = {isa = PBXBuildFile; productRef = DCD6BA07274A077A000928D1 /* Yaml */; };
+		DCD6BA0C274A0A6F000928D1 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = DCD6BA0B274A0A6F000928D1 /* CocoaAsyncSocket */; };
+		DCD6BA0E274A0A88000928D1 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = DCD6BA0D274A0A88000928D1 /* CocoaAsyncSocket */; };
+		DCD6BA14274A1F8A000928D1 /* MMDB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA11274A1F8A000928D1 /* MMDB.xcframework */; };
+		DCD6BA16274A1F8A000928D1 /* Sodium.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA12274A1F8A000928D1 /* Sodium.xcframework */; };
+		DCD6BA17274A206C000928D1 /* MMDB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA11274A1F8A000928D1 /* MMDB.xcframework */; };
+		DCD6BA18274A206C000928D1 /* MMDB.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA11274A1F8A000928D1 /* MMDB.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCD6BA19274A206E000928D1 /* Sodium.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA12274A1F8A000928D1 /* Sodium.xcframework */; };
+		DCD6BA1A274A206E000928D1 /* Sodium.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCD6BA12274A1F8A000928D1 /* Sodium.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD932E2261183C10027BBFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB2F84625C8D4960049D9EF /* Assets.xcassets */; };
 		DCDA907A25C9117900D84B57 /* marketing_beta.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCDA906C25C9117800D84B57 /* marketing_beta.txt */; };
 		DCDA907B25C9117900D84B57 /* marketing_beta.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCDA906C25C9117800D84B57 /* marketing_beta.txt */; };
@@ -101,18 +120,6 @@
 		DCDA909325C9117900D84B57 /* email_opens.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCDA907825C9117900D84B57 /* email_opens.txt */; };
 		DCDA909425C9117900D84B57 /* facebook_sdk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCDA907925C9117900D84B57 /* facebook_sdk.txt */; };
 		DCDA909525C9117900D84B57 /* facebook_sdk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCDA907925C9117900D84B57 /* facebook_sdk.txt */; };
-		DCEB8297267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8293267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework */; };
-		DCEB8298267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8293267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DCEB8299267C3B7C00AC9C84 /* MMDB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8294267C3B7C00AC9C84 /* MMDB.xcframework */; };
-		DCEB829A267C3B7C00AC9C84 /* MMDB.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8294267C3B7C00AC9C84 /* MMDB.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DCEB829B267C3B7C00AC9C84 /* Yaml.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8295267C3B7C00AC9C84 /* Yaml.xcframework */; };
-		DCEB829C267C3B7C00AC9C84 /* Yaml.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8295267C3B7C00AC9C84 /* Yaml.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DCEB829D267C3B7C00AC9C84 /* Sodium.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8296267C3B7C00AC9C84 /* Sodium.xcframework */; };
-		DCEB829E267C3B7D00AC9C84 /* Sodium.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8296267C3B7C00AC9C84 /* Sodium.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DCEB829F267C3BDD00AC9C84 /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8293267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework */; };
-		DCEB82A0267C3BDD00AC9C84 /* Sodium.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8296267C3B7C00AC9C84 /* Sodium.xcframework */; };
-		DCEB82A1267C3BDD00AC9C84 /* MMDB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8294267C3B7C00AC9C84 /* MMDB.xcframework */; };
-		DCEB82A2267C3BDD00AC9C84 /* Yaml.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8295267C3B7C00AC9C84 /* Yaml.xcframework */; };
 		DCEC2E48267B1CF800B58EE8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB2F87225C8D4B50049D9EF /* NetworkExtension.framework */; };
 		DCEE253C267C3E64003EA9DB /* ResponseGeneratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE2514267C3E61003EA9DB /* ResponseGeneratorFactory.swift */; };
 		DCEE253D267C3E64003EA9DB /* ResponseGeneratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE2514267C3E61003EA9DB /* ResponseGeneratorFactory.swift */; };
@@ -384,10 +391,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DCEB8298267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework in Embed Frameworks */,
-				DCEB829C267C3B7C00AC9C84 /* Yaml.xcframework in Embed Frameworks */,
-				DCEB829E267C3B7D00AC9C84 /* Sodium.xcframework in Embed Frameworks */,
-				DCEB829A267C3B7C00AC9C84 /* MMDB.xcframework in Embed Frameworks */,
+				DCD6BA1A274A206E000928D1 /* Sodium.xcframework in Embed Frameworks */,
+				DCD6BA18274A206C000928D1 /* MMDB.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +406,8 @@
 		DC33FE252622D8170090D1EE /* InAppAudienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppAudienceViewController.swift; sourceTree = "<group>"; };
 		DC38B04025D3641700012733 /* RealmUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtilities.swift; sourceTree = "<group>"; };
 		DC3C93062647871D007641A8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DC5C4AD727880EB9009A154C /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		DC5C4ADA278932F6009A154C /* allowlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allowlist.txt; sourceTree = "<group>"; };
 		DC642C732612B42200CF2C51 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DC642C792612C41D00CF2C51 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubscribeViewController.swift; path = "tunnel/View Controllers/SubscribeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		DC642C832612D69700CF2C51 /* TunnelSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelSetupViewController.swift; sourceTree = "<group>"; };
@@ -442,6 +449,8 @@
 		DCC9158425DB867B00F543FF /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		DCC9158725DB867D00F543FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC9159A25DB8BC900F543FF /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
+		DCD6BA11274A1F8A000928D1 /* MMDB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MMDB.xcframework; path = Carthage/Build/MMDB.xcframework; sourceTree = "<group>"; };
+		DCD6BA12274A1F8A000928D1 /* Sodium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Sodium.xcframework; path = Carthage/Build/Sodium.xcframework; sourceTree = "<group>"; };
 		DCDA906C25C9117800D84B57 /* marketing_beta.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = marketing_beta.txt; sourceTree = "<group>"; };
 		DCDA906D25C9117800D84B57 /* ransomware.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ransomware.txt; sourceTree = "<group>"; };
 		DCDA906E25C9117800D84B57 /* google_shopping_ads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = google_shopping_ads.txt; sourceTree = "<group>"; };
@@ -456,10 +465,6 @@
 		DCDA907725C9117900D84B57 /* clickbait.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clickbait.txt; sourceTree = "<group>"; };
 		DCDA907825C9117900D84B57 /* email_opens.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = email_opens.txt; sourceTree = "<group>"; };
 		DCDA907925C9117900D84B57 /* facebook_sdk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = facebook_sdk.txt; sourceTree = "<group>"; };
-		DCEB8293267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaAsyncSocket.xcframework; path = ../../NEKit/NEKit/Carthage/Build/CocoaAsyncSocket.xcframework; sourceTree = "<group>"; };
-		DCEB8294267C3B7C00AC9C84 /* MMDB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MMDB.xcframework; path = ../../NEKit/NEKit/Carthage/Build/MMDB.xcframework; sourceTree = "<group>"; };
-		DCEB8295267C3B7C00AC9C84 /* Yaml.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Yaml.xcframework; path = ../../NEKit/NEKit/Carthage/Build/Yaml.xcframework; sourceTree = "<group>"; };
-		DCEB8296267C3B7C00AC9C84 /* Sodium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Sodium.xcframework; path = "../../NEKit/Sodium-framework/BuiltFrameworks/Sodium.xcframework"; sourceTree = "<group>"; };
 		DCEE24DD267C3E5D003EA9DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DCEE24DF267C3E5D003EA9DB /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		DCEE24E0267C3E5D003EA9DB /* DebugObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugObserver.swift; sourceTree = "<group>"; };
@@ -577,18 +582,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEB8297267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework in Frameworks */,
-				DCEB829B267C3B7C00AC9C84 /* Yaml.xcframework in Frameworks */,
+				DCD6BA0C274A0A6F000928D1 /* CocoaAsyncSocket in Frameworks */,
 				DCB2F87325C8D4B50049D9EF /* NetworkExtension.framework in Frameworks */,
 				DC3C93072647871D007641A8 /* StoreKit.framework in Frameworks */,
+				DC44814A277325D500025BD3 /* TunnelKitOpenVPNAppExtension in Frameworks */,
 				DC38B03425D362E900012733 /* RealmSwift in Frameworks */,
+				DC448148277325D500025BD3 /* TunnelKitOpenVPN in Frameworks */,
 				DC8B1295267C5018000A2062 /* tun2socks in Frameworks */,
-				DCEB829D267C3B7C00AC9C84 /* Sodium.xcframework in Frameworks */,
+				DCD6BA06274A072C000928D1 /* Yaml in Frameworks */,
+				DC448142277325D500025BD3 /* TunnelKit in Frameworks */,
+				DC448144277325D500025BD3 /* TunnelKitIKE in Frameworks */,
+				DCD6BA19274A206E000928D1 /* Sodium.xcframework in Frameworks */,
 				DC38B03225D362E900012733 /* Realm in Frameworks */,
 				DC290A9226425F32008F45B4 /* SwiftyStoreKit in Frameworks */,
 				DC9B508B2679EE8200428481 /* CocoaLumberjack in Frameworks */,
 				DC9B50892679EE8200428481 /* CocoaLumberjackSwift in Frameworks */,
-				DCEB8299267C3B7C00AC9C84 /* MMDB.xcframework in Frameworks */,
+				DC448146277325D500025BD3 /* TunnelKitLZO in Frameworks */,
+				DCD6BA17274A206C000928D1 /* MMDB.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,17 +620,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEB82A0267C3BDD00AC9C84 /* Sodium.xcframework in Frameworks */,
-				DCEB82A2267C3BDD00AC9C84 /* Yaml.xcframework in Frameworks */,
+				DCD6BA08274A077A000928D1 /* Yaml in Frameworks */,
 				DC9B508F2679EEBD00428481 /* CocoaLumberjackSwift in Frameworks */,
 				DC9B50912679EEBD00428481 /* CocoaLumberjackSwiftLogBackend in Frameworks */,
 				DC38B03A25D3634700012733 /* RealmSwift in Frameworks */,
 				DC9B508D2679EEBD00428481 /* CocoaLumberjack in Frameworks */,
+				DCD6BA16274A1F8A000928D1 /* Sodium.xcframework in Frameworks */,
 				DC8B1297267C502A000A2062 /* tun2socks in Frameworks */,
 				DC38B03825D3634700012733 /* Realm in Frameworks */,
 				DCEC2E48267B1CF800B58EE8 /* NetworkExtension.framework in Frameworks */,
-				DCEB829F267C3BDD00AC9C84 /* CocoaAsyncSocket.xcframework in Frameworks */,
-				DCEB82A1267C3BDD00AC9C84 /* MMDB.xcframework in Frameworks */,
+				DCD6BA0E274A0A88000928D1 /* CocoaAsyncSocket in Frameworks */,
+				DCD6BA14274A1F8A000928D1 /* MMDB.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +653,7 @@
 			children = (
 				DC088E7125D35EB000E8857B /* BlockLogItem.swift */,
 				DCF8B4C6262416AB002E843A /* DirectoryItem.swift */,
+				DC5C4AD727880EB9009A154C /* ListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -761,10 +772,8 @@
 		DCB2F87125C8D4B50049D9EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DCEB8293267C3B7C00AC9C84 /* CocoaAsyncSocket.xcframework */,
-				DCEB8294267C3B7C00AC9C84 /* MMDB.xcframework */,
-				DCEB8296267C3B7C00AC9C84 /* Sodium.xcframework */,
-				DCEB8295267C3B7C00AC9C84 /* Yaml.xcframework */,
+				DCD6BA11274A1F8A000928D1 /* MMDB.xcframework */,
+				DCD6BA12274A1F8A000928D1 /* Sodium.xcframework */,
 				DC3C93062647871D007641A8 /* StoreKit.framework */,
 				DCB2F87225C8D4B50049D9EF /* NetworkExtension.framework */,
 				DCC9157D25DB867B00F543FF /* WidgetKit.framework */,
@@ -798,6 +807,7 @@
 		DCDA906B25C9111100D84B57 /* Block List */ = {
 			isa = PBXGroup;
 			children = (
+				DC5C4ADA278932F6009A154C /* allowlist.txt */,
 				DCF781FC25EC8E2200EB5D79 /* blocklist.txt */,
 				DCF7820425EC8E8500EB5D79 /* Parts */,
 			);
@@ -1121,6 +1131,13 @@
 				DC9B50882679EE8200428481 /* CocoaLumberjackSwift */,
 				DC9B508A2679EE8200428481 /* CocoaLumberjack */,
 				DC8B1294267C5018000A2062 /* tun2socks */,
+				DCD6BA05274A072C000928D1 /* Yaml */,
+				DCD6BA0B274A0A6F000928D1 /* CocoaAsyncSocket */,
+				DC448141277325D500025BD3 /* TunnelKit */,
+				DC448143277325D500025BD3 /* TunnelKitIKE */,
+				DC448145277325D500025BD3 /* TunnelKitLZO */,
+				DC448147277325D500025BD3 /* TunnelKitOpenVPN */,
+				DC448149277325D500025BD3 /* TunnelKitOpenVPNAppExtension */,
 			);
 			productName = tunnel;
 			productReference = DCB2F83A25C8D4930049D9EF /* tunnel.app */;
@@ -1183,6 +1200,8 @@
 				DC9B508E2679EEBD00428481 /* CocoaLumberjackSwift */,
 				DC9B50902679EEBD00428481 /* CocoaLumberjackSwiftLogBackend */,
 				DC8B1296267C502A000A2062 /* tun2socks */,
+				DCD6BA07274A077A000928D1 /* Yaml */,
+				DCD6BA0D274A0A88000928D1 /* CocoaAsyncSocket */,
 			);
 			productName = tunnelProvider;
 			productReference = DCB2F88825C8DC5F0049D9EF /* tunnelProvider.appex */;
@@ -1251,6 +1270,9 @@
 				DC290A9026425F32008F45B4 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				DC9B50872679EE8200428481 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
 				DC8B1293267C5018000A2062 /* XCRemoteSwiftPackageReference "tun2socks" */,
+				DCD6BA04274A072C000928D1 /* XCRemoteSwiftPackageReference "YamlSwift" */,
+				DCD6BA0A274A0A6F000928D1 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */,
+				DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */,
 			);
 			productRefGroup = DCB2F83B25C8D4930049D9EF /* Products */;
 			projectDirPath = "";
@@ -1276,6 +1298,7 @@
 				DCDA907A25C9117900D84B57 /* marketing_beta.txt in Resources */,
 				DCDA908825C9117900D84B57 /* general_ads.txt in Resources */,
 				DCDA908425C9117900D84B57 /* game_ads.txt in Resources */,
+				DC5C4ADB278932F6009A154C /* allowlist.txt in Resources */,
 				DCDA908625C9117900D84B57 /* data_trackers.txt in Resources */,
 				DCB2F84725C8D4960049D9EF /* Assets.xcassets in Resources */,
 				DCDA908E25C9117900D84B57 /* facebook_inc.txt in Resources */,
@@ -1315,6 +1338,7 @@
 				DCDA907B25C9117900D84B57 /* marketing_beta.txt in Resources */,
 				DCDA909525C9117900D84B57 /* facebook_sdk.txt in Resources */,
 				DCDA908925C9117900D84B57 /* general_ads.txt in Resources */,
+				DC5C4ADC278932F6009A154C /* allowlist.txt in Resources */,
 				DCDA909325C9117900D84B57 /* email_opens.txt in Resources */,
 				DCDA908325C9117900D84B57 /* snapchat_analytics.txt in Resources */,
 				DCDA909125C9117900D84B57 /* clickbait.txt in Resources */,
@@ -1448,6 +1472,7 @@
 				DCEE2635267C4BC2003EA9DB /* GCDSOCKS5ProxyServer.swift in Sources */,
 				DCEE2589267C46ED003EA9DB /* AdapterSocket.swift in Sources */,
 				DCEE25E8267C47D5003EA9DB /* Resolver.swift in Sources */,
+				DC5C4AD827880EB9009A154C /* ListItem.swift in Sources */,
 				DCEE25BA267C4709003EA9DB /* Tunnel.swift in Sources */,
 				DC38B04125D3641700012733 /* RealmUtilities.swift in Sources */,
 				DCC90B00261BEA2B00F07E0F /* InterfaceUtilities.swift in Sources */,
@@ -1570,6 +1595,7 @@
 				DCEE25B4267C4705003EA9DB /* SOCKS5ProxySocket.swift in Sources */,
 				DC38B03D25D363CC00012733 /* BlockLogItem.swift in Sources */,
 				DCEE262A267C4BC2003EA9DB /* NWTCPSocket.swift in Sources */,
+				DC5C4AD927880EB9009A154C /* ListItem.swift in Sources */,
 				DCEE257E267C46EA003EA9DB /* IPRangeListRule.swift in Sources */,
 				DCEE2602267C4B9B003EA9DB /* IPStackProtocol.swift in Sources */,
 				DCEE256A267C46DE003EA9DB /* RuleMatchEvent.swift in Sources */,
@@ -1741,6 +1767,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1802,6 +1829,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1831,7 +1859,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = tunnel/PLists/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1843,7 +1871,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1861,7 +1889,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = tunnel/PLists/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1873,7 +1901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1983,7 +2011,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnelProvider/tunnelProvider.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1996,7 +2024,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.tunnelProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2012,7 +2040,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnelProvider/tunnelProvider.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2025,7 +2053,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.tunnelProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2043,7 +2071,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = widget/widgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -2052,7 +2080,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2068,7 +2096,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = widget/widgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -2077,7 +2105,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2162,6 +2190,14 @@
 				minimumVersion = 10.5.2;
 			};
 		};
+		DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/passepartoutvpn/tunnelkit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		DC8B1293267C5018000A2062 /* XCRemoteSwiftPackageReference "tun2socks" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhuhaow/tun2socks.git";
@@ -2176,6 +2212,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.7.2;
+			};
+		};
+		DCD6BA04274A072C000928D1 /* XCRemoteSwiftPackageReference "YamlSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/behrang/YamlSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		DCD6BA0A274A0A6F000928D1 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/robbiehanson/CocoaAsyncSocket";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -2205,6 +2257,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC38B03025D362E900012733 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		DC448141277325D500025BD3 /* TunnelKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */;
+			productName = TunnelKit;
+		};
+		DC448143277325D500025BD3 /* TunnelKitIKE */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */;
+			productName = TunnelKitIKE;
+		};
+		DC448145277325D500025BD3 /* TunnelKitLZO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */;
+			productName = TunnelKitLZO;
+		};
+		DC448147277325D500025BD3 /* TunnelKitOpenVPN */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */;
+			productName = TunnelKitOpenVPN;
+		};
+		DC448149277325D500025BD3 /* TunnelKitOpenVPNAppExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC448140277325D500025BD3 /* XCRemoteSwiftPackageReference "tunnelkit" */;
+			productName = TunnelKitOpenVPNAppExtension;
 		};
 		DC8B1294267C5018000A2062 /* tun2socks */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2250,6 +2327,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC38B03025D362E900012733 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		DCD6BA05274A072C000928D1 /* Yaml */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD6BA04274A072C000928D1 /* XCRemoteSwiftPackageReference "YamlSwift" */;
+			productName = Yaml;
+		};
+		DCD6BA07274A077A000928D1 /* Yaml */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD6BA04274A072C000928D1 /* XCRemoteSwiftPackageReference "YamlSwift" */;
+			productName = Yaml;
+		};
+		DCD6BA0B274A0A6F000928D1 /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD6BA0A274A0A6F000928D1 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		DCD6BA0D274A0A88000928D1 /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD6BA0A274A0A6F000928D1 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

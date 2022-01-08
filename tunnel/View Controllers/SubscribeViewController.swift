@@ -80,39 +80,66 @@ class SubscribeViewController: UIViewController {
     
     @IBAction func btnSubscribe(_ sender: Any) {
         present(showLoadingIndicator(), animated: true, completion: nil)
-        SwiftyStoreKit.purchaseProduct(chosenProduct, quantity: 1, atomically: true) { result in
-            self.dismiss(animated: true, completion: nil)
-            switch result {
-            case .success(_):
-                SwiftyStoreKit.verifyReceipt(using: AppleValidator) { (receiptResult) in
-                    switch receiptResult {
-                    case .success(receipt: let receipt):
-                        let purchaseResult = SwiftyStoreKit.verifySubscriptions(ofType: .autoRenewable, productIds: Set(Subscriptions), inReceipt: receipt)
-
-                        switch purchaseResult {
-                        case .purchased( _, _):
-                            defaults.setValue(true, forKey: hasUserPurchasedKey)
-                            if self.outSubscribe.isEnabled {
-                                self.performSegue(withIdentifier: "subscribeToTunnelSetup", sender: self)
-                            }
-                    
-                        case .notPurchased, .expired(_, _):
-                            defaults.setValue(false, forKey: hasUserPurchasedKey)
-                            let ac = UIAlertController(title: "Not Subscribed", message: "A valid subscription isn't associated with this Apple ID. Please try pressing the Restore button to check again.", preferredStyle: .alert)
-                            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                            self.present(ac, animated: true, completion: nil)
+        SwiftyStoreKit.verifyReceipt(using: AppleValidator) { (receiptResult) in
+            switch receiptResult {
+            case .success(receipt: let receipt):
+                let purchaseResult = SwiftyStoreKit.verifySubscriptions(ofType: .autoRenewable, productIds: Set(Subscriptions), inReceipt: receipt)
+                print(purchaseResult)
+                switch purchaseResult {
+                case .purchased( _, _):
+                    defaults.setValue(true, forKey: hasUserPurchasedKey)
+                    let ac = UIAlertController(title: "Already Subscribed", message: "You already have a valid subscription! There's no need to buy a new subcscription, and you will not be charged again. \n \n You can change your subscription level in the iOS Settings app.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+                        if self.outSubscribe.isEnabled {
+                            self.performSegue(withIdentifier: "subscribeToTunnelSetup", sender: self)
                         }
-                    case .error(error: let error):
-                        let ac = UIAlertController(title: "Error", message: "Something went wrong. Please try pressing the Restore button to check again. \(error.localizedDescription)", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    }))
+                    self.dismiss(animated: true) {
                         self.present(ac, animated: true, completion: nil)
                     }
+                    
+                case .notPurchased, .expired(_, _):
+                    defaults.setValue(false, forKey: hasUserPurchasedKey)
+                    SwiftyStoreKit.purchaseProduct(self.chosenProduct, quantity: 1, atomically: true) { result in
+                        self.dismiss(animated: true, completion: nil)
+                        switch result {
+                        case .success(_):
+                            SwiftyStoreKit.verifyReceipt(using: AppleValidator) { (receiptResult) in
+                                switch receiptResult {
+                                case .success(receipt: let receipt):
+                                    let purchaseResult = SwiftyStoreKit.verifySubscriptions(ofType: .autoRenewable, productIds: Set(Subscriptions), inReceipt: receipt)
+                                    
+                                    switch purchaseResult {
+                                    case .purchased( _, _):
+                                        defaults.setValue(true, forKey: hasUserPurchasedKey)
+                                        if self.outSubscribe.isEnabled {
+                                            self.performSegue(withIdentifier: "subscribeToTunnelSetup", sender: self)
+                                        }
+                                        
+                                    case .notPurchased, .expired(_, _):
+                                        defaults.setValue(false, forKey: hasUserPurchasedKey)
+                                        let ac = UIAlertController(title: "Not Subscribed", message: "A valid subscription isn't associated with this Apple ID. Please try pressing the Restore button to check again.", preferredStyle: .alert)
+                                        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                        self.present(ac, animated: true, completion: nil)
+                                    }
+                                case .error(error: let error):
+                                    let ac = UIAlertController(title: "Error", message: "Something went wrong. Please try pressing the Restore button to check again. \(error.localizedDescription)", preferredStyle: .alert)
+                                    ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                    self.present(ac, animated: true, completion: nil)
+                                }
+                            }
+                            
+                        case .error(let error):
+                            self.present(self.errorAlertController(type: error), animated: true, completion: nil)
+                        }
+                        
+                    }
                 }
-        
-            case .error(let error):
-                self.present(self.errorAlertController(type: error), animated: true, completion: nil)
+            case .error(error: let error):
+                let ac = UIAlertController(title: "Error", message: "Something went wrong. Please try again. \(error.localizedDescription)", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(ac, animated: true, completion: nil)
             }
-            
         }
         
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0nz-8C-Uws">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0nz-8C-Uws">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,17 +16,17 @@
             <objects>
                 <viewController id="aEe-ag-5TV" customClass="WelcomeViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ste-0T-iXw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brL-1t-Xxm">
-                                <rect key="frame" x="122" y="292.5" width="131" height="58"/>
+                                <rect key="frame" x="141.5" y="387.5" width="131" height="53"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDL-vY-I5y" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                <rect key="frame" x="32" y="543" width="311" height="60"/>
+                                <rect key="frame" x="32" y="694" width="350" height="60"/>
                                 <color key="backgroundColor" name="TulabyteActiveButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="a05-Bt-qCV"/>
@@ -40,7 +41,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rBW-O3-P3K">
-                                <rect key="frame" x="37.5" y="372.5" width="300" height="150.5"/>
+                                <rect key="frame" x="57" y="490.5" width="300" height="150.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-8B-M4G">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -51,7 +52,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVZ-v6-5me">
                                         <rect key="frame" x="0.0" y="44" width="300" height="106.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Welcome to the TulaByte Community. It’s time to start taking back control of your digital privacy. Please see our website to understanding how the app works.</string>
+                                        <string key="text">Welcome to the TulaByte Community. It’s time to start taking back control of your digital privacy. Please see our website to understand how the app works.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -62,7 +63,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeGraphic" id="jcH-Ab-7LR">
-                                <rect key="frame" x="-249" y="-146" width="873" height="395"/>
+                                <rect key="frame" x="-249" y="-146" width="912" height="490"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
@@ -101,29 +102,29 @@
             <objects>
                 <viewController storyboardIdentifier="subscribe" id="pfd-Li-gLY" customClass="SubscribeViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kml-lg-7Zv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-qg-AUc">
-                                <rect key="frame" x="118" y="50" width="139.5" height="41"/>
+                                <rect key="frame" x="137.5" y="50" width="139.5" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ykh-fL-IAP">
-                                <rect key="frame" x="32" y="319" width="311" height="284"/>
+                                <rect key="frame" x="32" y="470" width="350" height="284"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kaY-oS-TJP">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="284"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="284"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charged after a 3-day Free Trial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-Xz-c25">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="14"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-yp-V9B" customClass="TulaStateButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="29" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="29" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="eOh-ng-2H2"/>
@@ -139,7 +140,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-0N-4ii" customClass="TulaStateButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="104" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="104" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="LBF-jo-hRH"/>
@@ -155,7 +156,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAN-KO-kZ7" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="179" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="179" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Aj7-D4-DxG" userLabel="width = 350"/>
@@ -171,10 +172,10 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-Ln-ego">
-                                                <rect key="frame" x="0.0" y="254" width="311" height="30"/>
+                                                <rect key="frame" x="0.0" y="254" width="350" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="een-dc-2W9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <state key="normal" title="Subscription Information, Privacy &amp; Terms">
                                                             <color key="titleColor" name="AccentColor"/>
@@ -193,7 +194,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yr7-aV-09I">
-                                <rect key="frame" x="37.5" y="131" width="300" height="172.5"/>
+                                <rect key="frame" x="57" y="131" width="300" height="171"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-Ps-Qdg">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -204,13 +205,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnh-Jw-c2B">
                                         <rect key="frame" x="0.0" y="49" width="300" height="76"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">TulaByte runs on user subscriptions, not money from advertisers. Both subscriptions provide full access to the app, on iOS and macOS.</string>
+                                        <string key="text">TulaByte runs on user subscriptions, not money from advertisers. Both subscriptions provide full access to the app on all your devices.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-pX-9CD">
-                                        <rect key="frame" x="0.0" y="145" width="300" height="27.5"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-pX-9CD">
+                                        <rect key="frame" x="0.0" y="145" width="300" height="26"/>
                                         <color key="pageIndicatorTintColor" name="TulabyteInactiveButton"/>
                                         <color key="currentPageIndicatorTintColor" name="AccentColor"/>
                                     </pageControl>
@@ -240,9 +241,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YRt-ba-Amv">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8LO-1n-efM">
+                        <barButtonItem key="rightBarButtonItem" id="8LO-1n-efM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="2IB-HL-DPe">
-                                <rect key="frame" x="231" y="7" width="128" height="30"/>
+                                <rect key="frame" x="266" y="7" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restore Purchases"/>
                                 <connections>
@@ -268,23 +269,23 @@
             <objects>
                 <viewController id="4g6-1X-lQP" customClass="TunnelSetupViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nhV-Jt-Gq9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLq-PP-fog">
-                                <rect key="frame" x="118" y="50" width="139.5" height="41"/>
+                                <rect key="frame" x="137.5" y="50" width="139.5" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HND-Xy-2Zr">
-                                <rect key="frame" x="32" y="420" width="311" height="183"/>
+                                <rect key="frame" x="32" y="571" width="350" height="183"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fgK-Ep-VHc">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNZ-vY-Egf" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Tap to Setup">
@@ -307,10 +308,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cIs-sq-V2I">
-                                        <rect key="frame" x="0.0" y="75" width="311" height="60"/>
+                                        <rect key="frame" x="0.0" y="75" width="350" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-YE-zVo" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="8rP-rq-rib"/>
@@ -328,7 +329,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10E-vu-dKr">
-                                        <rect key="frame" x="0.0" y="150" width="311" height="33"/>
+                                        <rect key="frame" x="0.0" y="150" width="350" height="33"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="How it Works">
                                             <color key="titleColor" name="AccentColor"/>
@@ -341,7 +342,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-EZ-cAV">
-                                <rect key="frame" x="37.5" y="191" width="300" height="181.5"/>
+                                <rect key="frame" x="57" y="191" width="300" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tunnel Setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awc-al-a2I">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -356,8 +357,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Vm-cX-nGW">
-                                        <rect key="frame" x="0.0" y="154" width="300" height="27.5"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Vm-cX-nGW">
+                                        <rect key="frame" x="0.0" y="154" width="300" height="26"/>
                                         <color key="pageIndicatorTintColor" name="TulabyteInactiveButton"/>
                                         <color key="currentPageIndicatorTintColor" name="TulabyteGreen"/>
                                     </pageControl>
@@ -402,23 +403,23 @@
             <objects>
                 <viewController id="gvP-ae-06Y" customClass="AudienceViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L77-Lr-Nad">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAU-b8-cmB">
-                                <rect key="frame" x="118" y="50" width="139.5" height="41"/>
+                                <rect key="frame" x="137.5" y="50" width="139.5" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-hc-VSL">
-                                <rect key="frame" x="32" y="413" width="311" height="190"/>
+                                <rect key="frame" x="32" y="564" width="350" height="190"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cVI-wd-CPg">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="135"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGL-AV-rbi" customClass="TulaTextField" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteActiveButton"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -442,7 +443,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEk-TQ-g09" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="75" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="75" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="4lf-qQ-zQ6"/>
@@ -460,7 +461,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FF-Ca-B1H">
-                                        <rect key="frame" x="0.0" y="145" width="311" height="45"/>
+                                        <rect key="frame" x="0.0" y="145" width="350" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="4Po-04-yIC"/>
@@ -478,7 +479,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PUA-Gd-AKB">
-                                <rect key="frame" x="37.5" y="191" width="300" height="181.5"/>
+                                <rect key="frame" x="57" y="191" width="300" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulletin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFs-Nx-bit">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -493,8 +494,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="1QX-0U-4Vc">
-                                        <rect key="frame" x="0.0" y="154" width="300" height="27.5"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="1QX-0U-4Vc">
+                                        <rect key="frame" x="0.0" y="154" width="300" height="26"/>
                                         <color key="pageIndicatorTintColor" name="TulabyteInactiveButton"/>
                                         <color key="currentPageIndicatorTintColor" name="TulabyteGreen"/>
                                     </pageControl>
@@ -539,17 +540,17 @@
             <objects>
                 <viewController id="rDN-Yu-i7S" customClass="WidgetExplainerViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXK-pk-9nD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="TulaByte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79W-Y5-hmS">
-                                <rect key="frame" x="118" y="50" width="139.5" height="41"/>
+                                <rect key="frame" x="137.5" y="94" width="139.5" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTK-FB-bRT" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                <rect key="frame" x="32" y="587" width="311" height="60"/>
+                                <rect key="frame" x="32" y="782" width="350" height="60"/>
                                 <color key="backgroundColor" name="TulabyteActiveButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CaX-h4-8Vg"/>
@@ -564,7 +565,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-sl-mof">
-                                <rect key="frame" x="37.5" y="123" width="300" height="181.5"/>
+                                <rect key="frame" x="57" y="269" width="300" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Widget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqS-s3-qXf">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -581,7 +582,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="KUP-qk-aho">
-                                        <rect key="frame" x="0.0" y="154" width="300" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="154" width="300" height="26"/>
                                         <color key="pageIndicatorTintColor" name="TulabyteInactiveButton"/>
                                         <color key="currentPageIndicatorTintColor" name="AccentColor"/>
                                     </pageControl>
@@ -591,7 +592,7 @@
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-1K-Otk">
-                                <rect key="frame" x="122.5" y="386.5" width="130" height="130"/>
+                                <rect key="frame" x="122.5" y="531" width="169" height="169"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oe0-1K-Otk" secondAttribute="height" multiplier="1:1" id="YUr-cr-V2h"/>
                                     <constraint firstAttribute="height" priority="250" constant="169" id="bzu-D6-cly"/>
@@ -634,11 +635,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ESC-dw-8JN">
-                                <rect key="frame" x="0.0" y="301" width="375" height="366"/>
+                                <rect key="frame" x="0.0" y="345" width="414" height="551"/>
                                 <color key="backgroundColor" name="TulabyteBackground"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <color key="separatorColor" name="TulabyteInactiveButton"/>
@@ -646,21 +647,21 @@
                                 <color key="sectionIndexBackgroundColor" name="TulabyteBackground"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blockCell" textLabel="fhO-gq-N2c" detailTextLabel="Zk0-EJ-pwk" style="IBUITableViewCellStyleValue1" id="dAZ-A8-qAN">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dAZ-A8-qAN" id="04P-cf-rmy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fhO-gq-N2c">
-                                                    <rect key="frame" x="16" y="12" width="33" height="20.5"/>
+                                                    <rect key="frame" x="20" y="12" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zk0-EJ-pwk">
-                                                    <rect key="frame" x="300.5" y="12" width="58.5" height="20.5"/>
+                                                    <rect key="frame" x="335.5" y="12" width="58.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="TulabyteGreen"/>
@@ -679,7 +680,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-VM-UxT" customClass="TulaSC" customModule="tunnel" customModuleProvider="target">
-                                <rect key="frame" x="20" y="231" width="335" height="51"/>
+                                <rect key="frame" x="20" y="275" width="374" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0KF-qY-jtD"/>
                                 </constraints>
@@ -692,7 +693,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRh-OY-Y2R" customClass="TulaShareView" customModule="tunnel" customModuleProvider="target">
-                                <rect key="frame" x="20" y="111" width="335" height="100"/>
+                                <rect key="frame" x="20" y="155" width="374" height="100"/>
                                 <subviews>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-QW-ctI">
                                         <rect key="frame" x="20" y="16.5" width="183.5" height="67"/>
@@ -722,16 +723,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="60" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VC4-Oj-ejS">
-                                <rect key="frame" x="20" y="50" width="335" height="41"/>
+                                <rect key="frame" x="20" y="94" width="374" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte - On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8B-ki-vax">
-                                        <rect key="frame" x="0.0" y="0.0" width="226" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VNB-Z3-mGG">
-                                        <rect key="frame" x="286" y="5" width="51" height="31"/>
+                                        <rect key="frame" x="325" y="5" width="51" height="31"/>
                                         <connections>
                                             <action selector="btnFirewallEnabled:" destination="BYZ-38-t0r" eventType="valueChanged" id="owq-Ta-mFJ"/>
                                         </connections>
@@ -808,7 +809,7 @@
                 <navigationController storyboardIdentifier="onboarding" automaticallyAdjustsScrollViewInsets="NO" id="0nz-8C-Uws" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="byk-ro-WGw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -831,7 +832,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="1nH-1b-gqp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4JN-Ng-Bcl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -848,7 +849,7 @@
             <objects>
                 <tableViewController id="Chu-lA-H7w" customClass="SettingsViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="9pR-FM-KGm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="TulabyteBackground"/>
                         <color key="separatorColor" name="TulabyteInactiveButton"/>
@@ -858,21 +859,21 @@
                             <tableViewSection headerTitle="Subscription" id="I5I-mX-fTr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="Exu-or-dIv" imageView="7cl-9N-dz4" style="IBUITableViewCellStyleDefault" id="m2c-sl-JDu">
-                                        <rect key="frame" x="0.0" y="49.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m2c-sl-JDu" id="C07-NF-ELL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Manage Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Exu-or-dIv">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7cl-9N-dz4">
-                                                    <rect key="frame" x="16.75" y="12" width="19" height="18.5"/>
+                                                    <rect key="frame" x="20.75" y="12" width="19" height="18.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="wrench" catalog="system" symbolScale="small"/>
                                                 </imageView>
@@ -885,21 +886,21 @@
                             <tableViewSection headerTitle="Newsletter" id="Lqo-Hn-aVc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="h7c-vn-8w4" imageView="VuO-gJ-Uw7" style="IBUITableViewCellStyleDefault" id="hfw-Mu-4ae">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="143" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hfw-Mu-4ae" id="ddD-7H-e6d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h7c-vn-8w4">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VuO-gJ-Uw7">
-                                                    <rect key="frame" x="17.25" y="13" width="18" height="17"/>
+                                                    <rect key="frame" x="21.25" y="13" width="18" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="person.fill" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -912,21 +913,21 @@
                             <tableViewSection headerTitle="App Controls" id="GvF-d9-q5I">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="xMx-5T-ULQ" imageView="S6K-z0-RuK" style="IBUITableViewCellStyleDefault" id="WPH-ZP-0bD">
-                                        <rect key="frame" x="0.0" y="236.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="236.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WPH-ZP-0bD" id="kWa-54-3Su">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Modify Lists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xMx-5T-ULQ">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S6K-z0-RuK">
-                                                    <rect key="frame" x="16" y="11.5" width="20.5" height="18.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="20.5" height="18.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -935,21 +936,21 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="tVK-iZ-DES" imageView="T4H-UB-k7a" style="IBUITableViewCellStyleDefault" id="ofE-qC-mXW">
-                                        <rect key="frame" x="0.0" y="280" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="280" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ofE-qC-mXW" id="JTA-1A-OWM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Clear Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tVK-iZ-DES">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T4H-UB-k7a">
-                                                    <rect key="frame" x="16.5" y="12.5" width="19.5" height="17.5"/>
+                                                    <rect key="frame" x="20.5" y="12.5" width="19.5" height="17.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="clear" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -958,21 +959,21 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="roy-lM-C4d" imageView="cGa-TV-rnt" style="IBUITableViewCellStyleDefault" id="IZo-S2-GRt">
-                                        <rect key="frame" x="0.0" y="323.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="323.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZo-S2-GRt" id="Qtq-6x-7XT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Reset Tunnel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="roy-lM-C4d">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cGa-TV-rnt">
-                                                    <rect key="frame" x="16.5" y="10.5" width="19.5" height="20.5"/>
+                                                    <rect key="frame" x="20.5" y="10.5" width="19.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="trash.fill" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -985,21 +986,21 @@
                             <tableViewSection headerTitle="General" id="kql-g9-ZMo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="cw6-bc-16r" imageView="w3Y-Kf-LbA" style="IBUITableViewCellStyleDefault" id="cQ8-CV-UzL">
-                                        <rect key="frame" x="0.0" y="417" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="417" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cQ8-CV-UzL" id="7em-wl-Fcx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Frequently Asked Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cw6-bc-16r">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w3Y-Kf-LbA">
-                                                    <rect key="frame" x="16.25" y="12" width="20" height="19"/>
+                                                    <rect key="frame" x="20.25" y="12" width="20" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="questionmark.circle" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -1008,21 +1009,21 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="bhO-WQ-sQH" imageView="O5z-dR-GTj" style="IBUITableViewCellStyleDefault" id="IDy-07-wpN">
-                                        <rect key="frame" x="0.0" y="460.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="460.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IDy-07-wpN" id="z7k-E8-6bZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bhO-WQ-sQH">
-                                                    <rect key="frame" x="51.5" y="0.0" width="307.5" height="43.5"/>
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O5z-dR-GTj">
-                                                    <rect key="frame" x="16" y="11" width="20.5" height="20"/>
+                                                    <rect key="frame" x="20" y="11" width="20.5" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="hand.raised.fill" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -1031,21 +1032,21 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="pZn-e0-fq1" imageView="IyG-bv-8rM" style="IBUITableViewCellStyleDefault" id="Gad-49-kbv">
-                                        <rect key="frame" x="0.0" y="504" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="504" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gad-49-kbv" id="c2M-VF-70N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pZn-e0-fq1">
-                                                    <rect key="frame" x="55.75" y="0.0" width="303.25" height="43.5"/>
+                                                    <rect key="frame" x="59.75" y="0.0" width="334.25" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IyG-bv-8rM">
-                                                    <rect key="frame" x="11.75" y="12" width="29" height="19"/>
+                                                    <rect key="frame" x="15.75" y="12" width="29" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="figure.stand.line.dotted.figure.stand" catalog="system" symbolScale="medium"/>
                                                 </imageView>
@@ -1076,7 +1077,7 @@
             <objects>
                 <tableViewController id="cmN-mj-bgV" customClass="DirectoryViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="m6k-Lf-vyR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="TulabyteBackground"/>
                         <color key="separatorColor" name="TulabyteInactiveButton"/>
@@ -1084,26 +1085,26 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="directoryCell" textLabel="Cjl-WK-eQv" detailTextLabel="FwY-LU-GtI" imageView="u9m-Ns-hKz" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="Mrs-C9-RwO">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mrs-C9-RwO" id="eE5-1e-oeB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="TulaByte Mobile App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cjl-WK-eQv">
-                                            <rect key="frame" x="51.5" y="30" width="163" height="20.5"/>
+                                            <rect key="frame" x="55.5" y="30" width="163" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u9m-Ns-hKz">
-                                            <rect key="frame" x="17.25" y="41.5" width="18" height="17"/>
+                                            <rect key="frame" x="21.25" y="41.5" width="18" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <imageReference key="image" image="link" catalog="system" symbolScale="small"/>
                                         </imageView>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Our flagship product, the app you are currently in." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FwY-LU-GtI">
-                                            <rect key="frame" x="51.5" y="53.5" width="267" height="14"/>
+                                            <rect key="frame" x="55.5" y="53.5" width="267" height="14"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1133,7 +1134,7 @@
                     <tabBarItem key="tabBarItem" title="Directory" image="list.dash" catalog="system" id="bmb-t9-1Z0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="j72-eP-FCL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1150,23 +1151,23 @@
             <objects>
                 <viewController id="8a3-Rj-Tx1" customClass="InAppAudienceViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJI-23-9Wa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TulaByte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-5R-31U">
-                                <rect key="frame" x="118" y="50" width="139.5" height="41"/>
+                                <rect key="frame" x="137.5" y="50" width="139.5" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-mA-YNx">
-                                <rect key="frame" x="32" y="492" width="311" height="135"/>
+                                <rect key="frame" x="32" y="653" width="350" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-IC-0Gw">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="135"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWv-K8-Mpv" customClass="TulaTextField" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteActiveButton"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1190,7 +1191,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9C-mJ-Toh" customClass="TulaButton" customModule="tunnel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="75" width="311" height="60"/>
+                                                <rect key="frame" x="0.0" y="75" width="350" height="60"/>
                                                 <color key="backgroundColor" name="TulabyteInactiveButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ddz-eB-Jn5"/>
@@ -1210,7 +1211,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="erm-bH-yni">
-                                <rect key="frame" x="37.5" y="191" width="300" height="143.5"/>
+                                <rect key="frame" x="57" y="297.5" width="300" height="143.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulletin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-Lv-ZqZ">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
@@ -1277,28 +1278,28 @@
             <objects>
                 <tableViewController id="jIO-Gk-97d" customClass="CustomBlocklistTableViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Bg6-Te-kqe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="TulabyteBackground"/>
                         <color key="separatorColor" name="TulabyteInactiveButton"/>
                         <color key="sectionIndexColor" name="AccentColor"/>
                         <color key="sectionIndexBackgroundColor" name="TulabyteBackground"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="gkG-uS-Azf">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" name="TulabyteActiveButton"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" textLabel="gkt-ED-wes" style="IBUITableViewCellStyleDefault" id="MzD-5U-Q7t">
-                                <rect key="frame" x="0.0" y="100.5" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="100.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MzD-5U-Q7t" id="ADQ-xG-utC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gkt-ED-wes">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1318,7 +1319,7 @@
                     <navigationItem key="navigationItem" id="7Zf-rm-Kaw">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="TLf-Wu-yFX">
-                            <rect key="frame" x="116" y="5.5" width="143" height="33"/>
+                            <rect key="frame" x="135.5" y="5.5" width="143" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Blocklist"/>

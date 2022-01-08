@@ -11,12 +11,13 @@ import WidgetKit
 
 let blockCountSinceLastUpdateKey = "blockCountSinceLastUpdate"
 
-//MARK:- CONFIG
+//MARK: CONFIG
 let fileURL = FileManager.default
     .containerURL(forSecurityApplicationGroupIdentifier: "group.com.tulabyte.tulabyte")!
     .appendingPathComponent("tulabyte.realm")
 let config = Realm.Configuration(fileURL: fileURL)
 
+//MARK: Block Log
 func addBlockLogItem(url: String, timestamp: Date = Date()) {
     let realm = try! Realm(configuration: config)
     
@@ -31,7 +32,7 @@ func addBlockLogItem(url: String, timestamp: Date = Date()) {
     
     if #available(iOSApplicationExtension 14.0, iOS 14.0, *) {
         WidgetCenter.shared.reloadAllTimelines()
-}
+    }
 }
 
 func retrieveBlockLog() -> Results<BlockLogItem> {
@@ -99,7 +100,193 @@ func retrieveGroupedCountToday() -> Array<(url: String, count: Int)> {
 func clearBlockLog() {
     let realm = try! Realm(configuration: config)
     try! realm.write {
-      realm.deleteAll()
+        let blockLog = realm.objects(BlockLogItem.self)
+        realm.delete(blockLog)
     }
+}
+
+
+//MARK: Lists
+
+// List options
+enum List {
+    case allow
+    case block
+}
+
+// add a single item to a given list
+func addItemToList(url: String, userAdded: Bool = true, list: List){
+    var listItem: ListItem?
+    
+    if list == .allow {
+        listItem = AllowListItem()
+    } else if list == .block {
+        listItem = BlockListItem()
+    }
+    
+    listItem!.url = url
+    listItem!.userAdded = userAdded
+    
+    let realm = try! Realm(configuration: config)
+    
+    try! realm.write({
+        realm.add(listItem!, update: .modified)
+    })
+}
+
+// add multiple items to a given list
+func addItemsToList(urls: [String], userAdded: Bool = true, list: List) {
+    var urlList:[ListItem] = []
+    
+    if list == .allow {
+        urlList = urls.map { url in
+            var item = AllowListItem()
+            item.url = url
+            item.userAdded = userAdded
+            
+            return item
+        }
+    } else if list == .block {
+        urlList = urls.map { url in
+            var item = BlockListItem()
+            item.url = url
+            item.userAdded = userAdded
+            
+            return item
+        }
+    }
+    
+    let realm = try! Realm(configuration: config)
+    
+    try! realm.write({
+        for item in urlList {
+            realm.add(item, update: .modified)
+        }
+    })
+}
+
+// delete a specific item from a list
+func deleteItemFromList(url: String, list: List){
+    let realm = try! Realm(configuration: config)
+    
+    try! realm.write({
+        if list == .allow{
+            let item = realm.object(ofType: AllowListItem.self, forPrimaryKey: url)
+            
+            realm.delete(item!)
+        } else if list == .block {
+            let item = realm.object(ofType: BlockListItem.self, forPrimaryKey: url)
+            
+            realm.delete(item!)
+        }
+    })
+}
+
+// clear a list
+func clearList(list: List){
+    let realm = try! Realm(configuration: config)
+    
+    try! realm.write({
+        if list == .allow {
+            let selected = realm.objects(AllowListItem.self)
+            realm.delete(selected)
+        } else if list == .block {
+            let selected = realm.objects(BlockListItem.self)
+            realm.delete(selected)
+        }
+    })
+}
+
+// get a list as an array of urls
+func getListArray(list: List) -> [String]{
+    let realm = try! Realm(configuration: config)
+    
+    if list == .allow {
+        let urls = realm.objects(AllowListItem.self)
+        return urls.map({ i in
+            return i.url
+        })
+        
+    } else if list == .block {
+        let urls = realm.objects(BlockListItem.self)
+        return urls.map({ i in
+            return i.url
+        })
+    }
+    
+    return []
+}
+
+// read urls from file in the bundle
+func readItemsFromFile(bundlePath: String) -> [String] {
+    var domains = [String]()
+    
+    guard let path = Bundle.main.path(forResource: bundlePath, ofType: "txt") else {
+        return domains
+    }
+    
+    do {
+        let contents = try String(contentsOfFile: path)
+        let lines = contents.components(separatedBy: "\n")
+        for line in lines {
+            if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
+                domains.append(line)
+                NSLog("TBT DB: \(line) enabled on blocklog")
+            }
+        }
+    }
+    catch _ as NSError{
+    }
+    return domains
+}
+
+// read items from file outside bundle
+func readItemsFromFile(fileURL: URL) -> [String] {
+    var domains = [String]()
+    
+    do {
+        if fileURL.startAccessingSecurityScopedResource() == true {
+            let contents = try! String(contentsOfFile: fileURL.path)
+            NSLog("TBT Lists: Selected file - \(contents)")
+            let lines = contents.components(separatedBy: "\n")
+            for line in lines {
+                if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
+                    domains.append(line)
+                    NSLog("TBT DB: \(line) enabled on blocklog")
+                }
+            }
+        } else {
+            NSLog("TBT Lists ERROR: Permission not received to read file")
+        }
+        fileURL.stopAccessingSecurityScopedResource()
+    }
+    catch {
+        NSLog("TBT Lists ERROR: \(error)")
+    }
+    return domains
+}
+
+// add items from a file to a list within the bundle
+func addFileItemsToList(bundlePath: String, list: List, userAdded: Bool = true) {
+    let fileItems = readItemsFromFile(bundlePath: bundlePath)
+    
+    addItemsToList(urls: fileItems, userAdded: userAdded, list: list)
+}
+
+// add items from a file to a list from outside the bundle
+func addFileItemsToList(fileURL: URL, list: List, userAdded: Bool = true) {
+    let fileItems = readItemsFromFile(fileURL: fileURL)
+    
+    addItemsToList(urls: fileItems, userAdded: userAdded, list: list)
+}
+
+//setup tulabyte blocklist
+func setupTulaByteBlockList() {
+    addFileItemsToList(bundlePath: "blocklist", list: .block)
+}
+
+//setup tulabyte allowlist
+func setupTulaByteAllowList() {
+    addFileItemsToList(bundlePath: "allowlist", list: .allow)
 }
 
