@@ -302,7 +302,7 @@ func setupTulaByteAllowList() {
 
 // does domain exist in blocklist
 func isDomainInList(url: String, list: List) -> Bool {
-    let startTime = CFAbsoluteTimeGetCurrent()
+    let start = CFAbsoluteTimeGetCurrent()
     
     let realm = try! Realm(configuration: config)
     
@@ -329,7 +329,7 @@ func isDomainInList(url: String, list: List) -> Bool {
         }
     }
     
-    NSLog("TBT DB: Checked \(url) in \(startTime - CFAbsoluteTimeGetCurrent())s")
+    NSLog("TBT DB: Checked \(url) in \(start - CFAbsoluteTimeGetCurrent())s")
     return false
 }
 
