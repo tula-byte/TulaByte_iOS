@@ -29,6 +29,7 @@
 		DC5C4AD927880EB9009A154C /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4AD727880EB9009A154C /* ListItem.swift */; };
 		DC5C4ADB278932F6009A154C /* allowlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC5C4ADA278932F6009A154C /* allowlist.txt */; };
 		DC5C4ADC278932F6009A154C /* allowlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC5C4ADA278932F6009A154C /* allowlist.txt */; };
+		DC5C4ADD278957C5009A154C /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4AD727880EB9009A154C /* ListItem.swift */; };
 		DC62BD1D25DE27EA0091E991 /* TunnelUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2F90125C8DE2F0049D9EF /* TunnelUtilities.swift */; };
 		DC642C742612B42200CF2C51 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C732612B42200CF2C51 /* WelcomeViewController.swift */; };
 		DC642C7A2612C41D00CF2C51 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C792612C41D00CF2C51 /* SubscribeViewController.swift */; };
@@ -1679,6 +1680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC62BD1D25DE27EA0091E991 /* TunnelUtilities.swift in Sources */,
+				DC5C4ADD278957C5009A154C /* ListItem.swift in Sources */,
 				DC78CB2625DDFE76006BB5C9 /* BlockLogItem.swift in Sources */,
 				DC78CB2225DDFE5E006BB5C9 /* RealmUtilities.swift in Sources */,
 				DC78CACE25DDEA77006BB5C9 /* TulaEntryView.swift in Sources */,

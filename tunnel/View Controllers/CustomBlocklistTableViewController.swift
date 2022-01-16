@@ -68,9 +68,9 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
     var listArray: [String] {
         switch scListOption.selectedSegmentIndex {
         case 0:
-            return getBlocklistArray()
+            return getListArray(list: .block)
         case 1:
-            return getAllowlistArray()
+            return getListArray(list: .allow)
         default:
             return []
         }
@@ -110,18 +110,20 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         
         ac.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
             let newURL = (ac.textFields![0] as UITextField).text
-            var key:String = ""
+            //var key:String = ""
             
             switch self.scListOption.selectedSegmentIndex{
             case 0:
-                key = tulabyteBlocklistKey
+                //key = tulabyteBlocklistKey
+                addItemToList(url: newURL!, userAdded: true, list: .block)
             case 1:
-                key = tulabyteAllowlistKey
+                //key = tulabyteAllowlistKey
+                addItemToList(url: newURL!, userAdded: true, list: .allow)
             default:
-                key = ""
+                let key = ""
             }
             
-            setAllowlistDomain(dKey: key, domain: newURL!)
+            //setAllowlistDomain(dKey: key, domain: newURL!)
             
             TunnelController.shared.restartTunnel()
             self.shortLoad()
@@ -144,11 +146,13 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         ac.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { action in
             switch self.scListOption.selectedSegmentIndex {
             case 0:
-                clearList(dKey: tulabyteBlocklistKey)
-                setupTulaByteBlocklist()
+                //clearList(dKey: tulabyteBlocklistKey)
+                clearList(list: .block)
+                setupTulaByteBlockList()
             case 1:
-                clearList(dKey: tulabyteAllowlistKey)
-                setupTulaByteAllowlist()
+                //clearList(dKey: tulabyteAllowlistKey)
+                clearList(list: .allow)
+                setupTulaByteAllowList()
             default:
                 print("doing nothing")
             }
@@ -171,9 +175,11 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         ac.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { action in
             switch self.scListOption.selectedSegmentIndex {
             case 0:
-                clearList(dKey: tulabyteBlocklistKey)
+                //clearList(dKey: tulabyteBlocklistKey)
+                clearList(list: .block)
             case 1:
-                clearList(dKey: tulabyteAllowlistKey)
+                //clearList(dKey: tulabyteAllowlistKey)
+                clearList(list: .allow)
             default:
                 print("doing nothing")
             }
@@ -225,57 +231,56 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         guard let myURL = urls.first else {
             return
         }
-        userSelectedBlockListURL = myURL
+        /*
+         userSelectedBlockListURL = myURL
+         
+         if self.userSelectedBlockListURL != nil {
+         var newDomains = Dictionary<String, Bool>()
+         
+         do {
+         if userSelectedBlockListURL?.startAccessingSecurityScopedResource() == true {
+         let contents = try String(contentsOfFile: self.userSelectedBlockListURL!.path)
+         NSLog("TBT Lists: Selected file - \(contents)")
+         let lines = contents.components(separatedBy: "\n")
+         for line in lines {
+         if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
+         newDomains[line] = true
+         NSLog("TBT DB: \(line) enabled on blocklog")
+         }
+         }
+         } else {
+         NSLog("TBT Lists ERROR: Permission not received to read file")
+         }
+         userSelectedBlockListURL?.stopAccessingSecurityScopedResource()
+         }
+         catch{
+         NSLog("TBT Lists ERROR: \(error)")
+         }
+         NSLog("TBT Lists: \(newDomains)")
+         */
+        shortLoad()
         
-        if self.userSelectedBlockListURL != nil {
-            var newDomains = Dictionary<String, Bool>()
-            
-            do {
-                if userSelectedBlockListURL?.startAccessingSecurityScopedResource() == true {
-                    let contents = try String(contentsOfFile: self.userSelectedBlockListURL!.path)
-                    NSLog("TBT Lists: Selected file - \(contents)")
-                    let lines = contents.components(separatedBy: "\n")
-                    for line in lines {
-                        if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
-                            newDomains[line] = true
-                            NSLog("TBT DB: \(line) enabled on blocklog")
-                        }
-                    }
-                } else {
-                    NSLog("TBT Lists ERROR: Permission not received to read file")
-                }
-                userSelectedBlockListURL?.stopAccessingSecurityScopedResource()
-            }
-            catch{
-                NSLog("TBT Lists ERROR: \(error)")
-            }
-            NSLog("TBT Lists: \(newDomains)")
-            self.shortLoad()
-            
-                
-                switch self.scListOption.selectedSegmentIndex{
-                case 0:
-                    DispatchQueue.global(qos: .utility).async {
-                        addCustomList(dKey: tulabyteBlocklistKey, newDomains: newDomains)
-                    }
-                case 1:
-                    DispatchQueue.global(qos: .utility).async {
-                        addCustomList(dKey: tulabyteAllowlistKey, newDomains: newDomains)
-                    }
-                default:
-                    break
-                }
-                
-                DispatchQueue.main.async {
-                    TunnelController.shared.restartTunnel()
-                    
-                    self.filteredListArray = self.listArray
-                    self.tableView.reloadData()
-                }
-        } else {
-            NSLog("TBT Lists: User didnt select anything")
+        
+        switch self.scListOption.selectedSegmentIndex{
+        case 0:
+            //addCustomList(dKey: tulabyteBlocklistKey, newDomains: newDomains)
+            addFileItemsToList(fileURL: myURL, list: .block)
+            TunnelController.shared.restartTunnel()
+            self.filteredListArray = self.listArray
+            self.tableView.reloadData()
+        case 1:
+            //addCustomList(dKey: tulabyteAllowlistKey, newDomains: newDomains)
+            addFileItemsToList(fileURL: myURL, list: .allow)
+            TunnelController.shared.restartTunnel()
+            self.filteredListArray = self.listArray
+            self.tableView.reloadData()
+        default:
+            break
         }
+        
     }
+    
+    
     
     public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         self.dismiss(animated: true, completion: nil)
@@ -356,35 +361,35 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         return UIContextMenuConfiguration (
             identifier: id,
             previewProvider: nil) { _ in
-            
-            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
                 
-                self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
-                    //check whether an element contains the search term and return a boolean to confirm this
-                    return searchTerm.range(of: self.searchBar.text!, options: .caseInsensitive) != nil
-                })
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-                self.tableView.reloadData()
-                TunnelController.shared.restartTunnel()
+                let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
+                    disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    
+                    self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
+                        //check whether an element contains the search term and return a boolean to confirm this
+                        return searchTerm.range(of: self.searchBar.text!, options: .caseInsensitive) != nil
+                    })
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                    TunnelController.shared.restartTunnel()
+                }
+                
+                let swapListAction = UIAction(title: "Move to \(oppositeListTitle)list", image: UIImage(systemName: "arrow.left.arrow.right")) { _ in
+                    setAllowlistDomain(dKey: oppositeKey, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    
+                    disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    
+                    self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
+                        //check whether an element contains the search term and return a boolean to confirm this
+                        return searchTerm.range(of: self.searchBar.text!, options: .caseInsensitive) != nil
+                    })
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                    TunnelController.shared.restartTunnel()
+                }
+                
+                return UIMenu(title: "", image: nil, children: [swapListAction, deleteAction])
             }
-            
-            let swapListAction = UIAction(title: "Move to \(oppositeListTitle)list", image: UIImage(systemName: "arrow.left.arrow.right")) { _ in
-                setAllowlistDomain(dKey: oppositeKey, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
-                
-                disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
-                
-                self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
-                    //check whether an element contains the search term and return a boolean to confirm this
-                    return searchTerm.range(of: self.searchBar.text!, options: .caseInsensitive) != nil
-                })
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-                self.tableView.reloadData()
-                TunnelController.shared.restartTunnel()
-            }
-           
-            return UIMenu(title: "", image: nil, children: [swapListAction, deleteAction])
-        }
         
     }
     

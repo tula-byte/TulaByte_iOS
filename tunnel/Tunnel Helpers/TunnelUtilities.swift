@@ -36,6 +36,7 @@ func disableListDomain(dKey: String, domain: String){
 let tulabyteAllowlistKey = "tulabyteAllowlist"
 
 // FUNCTIONS
+/*
 func setupTulaByteAllowlist() {
     setAllowlistDomain(dKey: tulabyteAllowlistKey, domain:  "aiv-cdn.net")
     setAllowlistDomain(dKey: tulabyteAllowlistKey, domain:  "akamaihd.net")
@@ -129,6 +130,7 @@ func setupTulaByteAllowlist() {
     setAllowlistDomain(dKey: tulabyteAllowlistKey, domain:  "zoom.us")
     setAllowlistDomain(dKey: tulabyteAllowlistKey, domain:  "nianticlabs.com")
 }
+*/
 
 func setAllowlistDomain(dKey: String, domain: String, enabled: Bool = true) {
     var domains = getAllowlistDict(dKey: dKey)
@@ -213,6 +215,7 @@ func getBlocklistDomains(filename: String, enabled: Bool = true) -> Dictionary<S
     return domains
 }
 
+/*
 func setupTulaByteBlocklist() {
     var domains = [String: Bool]()
     
@@ -228,6 +231,7 @@ func setupTulaByteBlocklist() {
     defaults.set(domains, forKey: tulabyteBlocklistKey)
     defaults.synchronize()
 }
+ */
 
 func getBlocklistDict(dKey: String) -> Dictionary<String, Any> {
     if let domains = defaults.dictionary(forKey: dKey) {

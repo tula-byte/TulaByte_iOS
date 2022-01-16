@@ -4,7 +4,7 @@
 //
 //  Created by Arjun Singh on 29/1/21.
 //
-
+import Foundation
 import NetworkExtension
 import CocoaLumberjackSwift
 import CocoaLumberjackSwiftLogBackend
@@ -16,31 +16,38 @@ class TulaByteTunnelObserverFactory: ObserverFactory {
     }
     
     class TunnelProxySocketObserver: Observer<ProxySocketEvent> {
-        
-        let allowlistDomains = getAllowlistArray()
-        
         override func signal(_ event: ProxySocketEvent) {
             switch event {
             case .receivedRequest(let session, let socket):
                 if (session.host == testFirewallDomain) {
-                    NSLog("TBT BLOCKED:" + session.host)
+                    NSLog("TBT BLOCKER:" + session.host + "BLOCKED")
                     socket.forceDisconnect()
                     return
                 }
                 
+                /*
                 for domain in allowlistDomains {
                     if (session.host.hasSuffix("." + domain) || session.host == domain) {
                         print("TBT ALLOWED:" + session.host)
                         return
                     }
                 }
+                 */
                 
-                if (defaults.value(forKey: "userEnabledFirewall") != nil) == true {
-                    addBlockLogItem(url: session.host)
-                    NSLog("TBT BLOCKED:" + session.host)
-                    socket.forceDisconnect()
+                if isDomainInList(url: session.host, list: .allow) {
                     return
                 }
+                
+                if (defaults.value(forKey: "userEnabledFirewall") != nil) == true {
+                    if isDomainInList(url: session.host, list: .block) {
+                        addBlockLogItem(url: session.host)
+                        NSLog("TBT BLOCKER:" + session.host + "BLOCKED")
+                        socket.forceDisconnect()
+                        return
+                    }
+                }
+                print("TBT BLOCKER: \(session.host) ALLOWED")
+                return
                 
             default:
                 break
@@ -57,7 +64,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     let proxyServerPort: UInt16 = 9090;
     let proxyServerAddress = "127.0.0.1";
     var proxyServer: GCDHTTPProxyServer!
-
+    
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
         if proxyServer != nil {
             proxyServer.stop()
@@ -83,8 +90,11 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         proxySettings.excludeSimpleHostnames = false
         proxySettings.exceptionList = []
         
-        var combinedList: Array<String> = getBlocklistArray() + [testFirewallDomain]
-        combinedList = combinedList + getAllowlistArray()
+        /*
+        var combinedList: Array<String> = getListArray(list: .block) + [testFirewallDomain] + [""] 
+        combinedList = combinedList + getListArray(list: .allow)
+         */
+        let combinedList: Array<String> = [testFirewallDomain, ""]
         
         if combinedList.count <= 1 {
             NSLog("TBT: There wasn't anything in the blocklist or allowlist, so tunnel couldnt be established.")

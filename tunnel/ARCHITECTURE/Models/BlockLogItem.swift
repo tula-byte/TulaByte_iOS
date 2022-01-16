@@ -9,6 +9,6 @@ import Foundation
 import RealmSwift
 
 class BlockLogItem: Object {
-    @objc dynamic var url: String = ""
-    @objc dynamic var timestamp: Date = Date()
+    @Persisted var url: String = ""
+    @Persisted dynamic var timestamp: Date = Date()
 }

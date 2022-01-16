@@ -199,16 +199,19 @@ func clearList(list: List){
 
 // get a list as an array of urls
 func getListArray(list: List) -> [String]{
+    let startTime = CFAbsoluteTimeGetCurrent()
     let realm = try! Realm(configuration: config)
     
     if list == .allow {
         let urls = realm.objects(AllowListItem.self)
+        NSLog("TBT DB: \(urls.count) list items retrived in \(startTime - CFAbsoluteTimeGetCurrent())s")
         return urls.map({ i in
             return i.url
         })
         
     } else if list == .block {
         let urls = realm.objects(BlockListItem.self)
+        NSLog("TBT DB: \(urls.count) list items retrived in \(startTime - CFAbsoluteTimeGetCurrent())s")
         return urls.map({ i in
             return i.url
         })
@@ -231,7 +234,7 @@ func readItemsFromFile(bundlePath: String) -> [String] {
         for line in lines {
             if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
                 domains.append(line)
-                NSLog("TBT DB: \(line) enabled on blocklog")
+                //NSLog("TBT DB: \(line) enabled on blocklog")
             }
         }
     }
@@ -247,12 +250,12 @@ func readItemsFromFile(fileURL: URL) -> [String] {
     do {
         if fileURL.startAccessingSecurityScopedResource() == true {
             let contents = try! String(contentsOfFile: fileURL.path)
-            NSLog("TBT Lists: Selected file - \(contents)")
+            //NSLog("TBT Lists: Selected file - \(contents)")
             let lines = contents.components(separatedBy: "\n")
             for line in lines {
                 if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
                     domains.append(line)
-                    NSLog("TBT DB: \(line) enabled on blocklog")
+                    //NSLog("TBT DB: \(line) enabled on blocklog")
                 }
             }
         } else {
@@ -267,26 +270,67 @@ func readItemsFromFile(fileURL: URL) -> [String] {
 }
 
 // add items from a file to a list within the bundle
-func addFileItemsToList(bundlePath: String, list: List, userAdded: Bool = true) {
+func addFileItemsToList(bundlePath: String, list: List, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
+    let startTime = CFAbsoluteTimeGetCurrent()
     let fileItems = readItemsFromFile(bundlePath: bundlePath)
     
     addItemsToList(urls: fileItems, userAdded: userAdded, list: list)
+    let time = CFAbsoluteTimeGetCurrent() - startTime
+    NSLog("TBT DB: \(fileItems.count) list items added in \(time)s")
+    completion()
 }
 
 // add items from a file to a list from outside the bundle
-func addFileItemsToList(fileURL: URL, list: List, userAdded: Bool = true) {
+func addFileItemsToList(fileURL: URL, list: List, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
+    let startTime = CFAbsoluteTimeGetCurrent()
     let fileItems = readItemsFromFile(fileURL: fileURL)
     
     addItemsToList(urls: fileItems, userAdded: userAdded, list: list)
+    let time = CFAbsoluteTimeGetCurrent() - startTime
+    NSLog("TBT DB: \(fileItems.count) list items added in \(time)s")
 }
 
 //setup tulabyte blocklist
 func setupTulaByteBlockList() {
-    addFileItemsToList(bundlePath: "blocklist", list: .block)
+    addFileItemsToList(bundlePath: "blocklist", list: .block, userAdded: false)
 }
 
 //setup tulabyte allowlist
 func setupTulaByteAllowList() {
-    addFileItemsToList(bundlePath: "allowlist", list: .allow)
+    addFileItemsToList(bundlePath: "allowlist", list: .allow, userAdded: false)
 }
+
+// does domain exist in blocklist
+func isDomainInList(url: String, list: List) -> Bool {
+    let startTime = CFAbsoluteTimeGetCurrent()
+    
+    let realm = try! Realm(configuration: config)
+    
+    if list == .allow {
+        let allowlist = realm.objects(AllowListItem.self)
+        
+        let value = allowlist.where {
+            ($0.url.ends(with: url)) || ($0.url.starts(with: url)) || ($0.url == url)
+        }
+        
+        if value.count >= 1 {
+            return true
+        }
+        
+    } else if list == .block {
+        let blocklist = realm.objects(BlockListItem.self)
+        
+        let value = blocklist.where {
+            ($0.url.ends(with: url)) || ($0.url.starts(with: url)) || ($0.url == url)
+        }
+        
+        if value.count >= 1 {
+            return true
+        }
+    }
+    
+    NSLog("TBT DB: Checked \(url) in \(startTime - CFAbsoluteTimeGetCurrent())s")
+    return false
+}
+
 
