@@ -11,13 +11,13 @@ import WidgetKit
 
 let blockCountSinceLastUpdateKey = "blockCountSinceLastUpdate"
 
-//MARK: CONFIG
+//MARK: - CONFIG
 let fileURL = FileManager.default
     .containerURL(forSecurityApplicationGroupIdentifier: "group.com.tulabyte.tulabyte")!
     .appendingPathComponent("tulabyte.realm")
 let config = Realm.Configuration(fileURL: fileURL)
 
-//MARK: Block Log
+//MARK: - Block Log
 func addBlockLogItem(url: String, timestamp: Date = Date()) {
     let realm = try! Realm(configuration: config)
     
@@ -106,16 +106,13 @@ func clearBlockLog() {
 }
 
 
-//MARK: Lists
+//MARK: - Lists
 
-// List options
-enum List {
-    case allow
-    case block
-}
+//userdefaults key for lists engine migration
+let listsV2Key = "usesListsV2"
 
 // add a single item to a given list
-func addItemToList(url: String, userAdded: Bool = true, list: List){
+func addItemToList(url: String, userAdded: Bool = true, list: TulaList){
     var listItem: ListItem?
     
     if list == .allow {
@@ -135,7 +132,7 @@ func addItemToList(url: String, userAdded: Bool = true, list: List){
 }
 
 // add multiple items to a given list
-func addItemsToList(urls: [String], userAdded: Bool = true, list: List) {
+func addItemsToList(urls: [String], userAdded: Bool = true, list: TulaList) {
     var urlList:[ListItem] = []
     
     if list == .allow {
@@ -166,7 +163,7 @@ func addItemsToList(urls: [String], userAdded: Bool = true, list: List) {
 }
 
 // delete a specific item from a list
-func deleteItemFromList(url: String, list: List){
+func deleteItemFromList(url: String, list: TulaList){
     let realm = try! Realm(configuration: config)
     
     try! realm.write({
@@ -183,7 +180,7 @@ func deleteItemFromList(url: String, list: List){
 }
 
 // clear a list
-func clearList(list: List){
+func clearList(list: TulaList){
     let realm = try! Realm(configuration: config)
     
     try! realm.write({
@@ -198,7 +195,7 @@ func clearList(list: List){
 }
 
 // get a list as an array of urls
-func getListArray(list: List) -> [String]{
+func getListArray(list: TulaList) -> [String]{
     let startTime = CFAbsoluteTimeGetCurrent()
     let realm = try! Realm(configuration: config)
     
@@ -270,7 +267,7 @@ func readItemsFromFile(fileURL: URL) -> [String] {
 }
 
 // add items from a file to a list within the bundle
-func addFileItemsToList(bundlePath: String, list: List, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
+func addFileItemsToList(bundlePath: String, list: TulaList, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
     let startTime = CFAbsoluteTimeGetCurrent()
     let fileItems = readItemsFromFile(bundlePath: bundlePath)
     
@@ -281,7 +278,7 @@ func addFileItemsToList(bundlePath: String, list: List, userAdded: Bool = true, 
 }
 
 // add items from a file to a list from outside the bundle
-func addFileItemsToList(fileURL: URL, list: List, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
+func addFileItemsToList(fileURL: URL, list: TulaList, userAdded: Bool = true, completion: @escaping () -> Void = {}) {
     let startTime = CFAbsoluteTimeGetCurrent()
     let fileItems = readItemsFromFile(fileURL: fileURL)
     
@@ -301,7 +298,7 @@ func setupTulaByteAllowList() {
 }
 
 // does domain exist in blocklist
-func isDomainInList(url: String, list: List) -> Bool {
+func isDomainInList(url: String, list: TulaList) -> Bool {
     let start = CFAbsoluteTimeGetCurrent()
     
     let realm = try! Realm(configuration: config)
@@ -310,7 +307,7 @@ func isDomainInList(url: String, list: List) -> Bool {
         let allowlist = realm.objects(AllowListItem.self)
         
         let value = allowlist.where {
-            ($0.url.ends(with: url)) || ($0.url.starts(with: url)) || ($0.url == url)
+            ($0.url.ends(with: url)) || ($0.url == url)
         }
         
         if value.count >= 1 {
@@ -321,7 +318,7 @@ func isDomainInList(url: String, list: List) -> Bool {
         let blocklist = realm.objects(BlockListItem.self)
         
         let value = blocklist.where {
-            ($0.url.ends(with: url)) || ($0.url.starts(with: url)) || ($0.url == url)
+            ($0.url.ends(with: url)) || ($0.url == url)
         }
         
         if value.count >= 1 {
@@ -333,4 +330,41 @@ func isDomainInList(url: String, list: List) -> Bool {
     return false
 }
 
+//swap list
+func swapList(url: String, toList: TulaList){
+    if toList == .allow {
+        deleteItemFromList(url: url, list: .block)
+        addItemToList(url: url, list: .allow)
+    } else if toList == .block {
+        deleteItemFromList(url: url, list: .allow)
+        addItemToList(url: url, list: .block)
+    }
+}
 
+
+//MARK: - Monitor List
+func addItemToMonitorList(url: String, timestamp: Date = Date(), list: TulaList = .other) {
+    
+    var listIndex: Int {
+        switch list {
+        case .allow:
+            return 0
+        case .block:
+            return 1
+        case .other:
+            return 2
+        }
+    }
+    
+    let realm = try! Realm(configuration: config)
+    
+    let newItem = MonitorItem()
+    newItem.url = url
+    newItem.timestamp = timestamp
+    newItem.list = listIndex
+    
+    try! realm.write {
+        realm.add(newItem)
+        NSLog("TBT REALM: Added \(url) to monitor list")
+    }
+}

@@ -7,6 +7,7 @@
 
 import UIKit
 import WidgetKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,9 +16,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         NSLog("TBT: Tunnel State - \(TunnelController.shared.tunnelStatus())")
         
-        
         // update all the labels
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.refreshTable()
+            self.updateLabels()
+        }
+        
+        // watch realm for changes to update labels
+        let realm = try! Realm(configuration: config)
+        realmToken = realm.observe { notification, realm in
+            NSLog("TBT REALM: View updated with changes")
             self.refreshTable()
             self.updateLabels()
         }
@@ -57,7 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         @unknown default:
             return NSMutableAttributedString(string: "Unknown", attributes: redAttr)
         }}
-    
+    var realmToken: NotificationToken? //strong reference to realm update notification token
     
     
     //MARK: - OUTLETS

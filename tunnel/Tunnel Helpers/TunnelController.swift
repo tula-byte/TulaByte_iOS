@@ -32,7 +32,7 @@ class TunnelController: NSObject {
                 // if the current manager is the same as the existing manager
                 if self.manager == managers[0] {
                     // Don't delete the existing manager
-                    DDLogInfo("Existing manager is the same as the one being created. Not Replacing.")
+                    NSLog("TBT: Existing manager is the same as the one being created. Not Replacing.")
                     completion(nil)
                 }
                 // get rid of any preexisting reference to any managers for the manager variable
@@ -102,7 +102,7 @@ class TunnelController: NSObject {
             // if theres an error...
             if disableError != nil {
                 // ...log it
-                DDLogError("There was error disabling the tunnel and IDK what to do about it: \(disableError!)")
+                NSLog("TBT: There was error disabling the tunnel and IDK what to do about it: \(disableError!)")
             }
             // wait to ensure that tunnel is actually closed
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
@@ -111,7 +111,7 @@ class TunnelController: NSObject {
                     // if theres an error...
                     if enableError != nil {
                         // ...log it
-                        DDLogError("There was error enabling the tunnel and IDK what to do about it: \(enableError!)")
+                        NSLog("TBT: There was error enabling the tunnel and IDK what to do about it: \(enableError!)")
                     }
                     completion(enableError)
                 }
@@ -121,7 +121,13 @@ class TunnelController: NSObject {
     
     // enable the firewall and establish all the settings that go with that
     func enableTunnel(_ enabled: Bool, isUserExplicitToggle: Bool = false, completion: @escaping (_ error: Error?) -> Void = {_ in }) {
-        DDLogInfo("Firewall tunnel status: \(enabled)")
+        NSLog("TBT STATUS: \(enabled)")
+        
+        if defaults.bool(forKey: listsV2Key) == false {
+            NSLog("TBT: Lists updated to V2")
+            updateListEngine()
+            defaults.set(true, forKey: listsV2Key)
+        }
         
         defaults.setValue(true, forKey: "tunnelEnabled")
         
@@ -133,7 +139,7 @@ class TunnelController: NSObject {
         
         // check if user wanted change or if its software driven
         if isUserExplicitToggle {
-            DDLogInfo("User requested tunnel state change to \(enabled)")
+            NSLog("TBT: User requested tunnel state change to \(enabled)")
             // user wanted firewall enabled
             defaults.setValue(enabled, forKey: "userEnabledFirewall")
             defaults.synchronize()
@@ -169,7 +175,7 @@ class TunnelController: NSObject {
             self.manager!.saveToPreferences { (error) in
                 // check if there is an error specifically of the NEVPNError class
                 if let e = error as? NEVPNError {
-                    DDLogError("Error in the VPN manager while changing state to \(enabled): \(e)")
+                    NSLog("TBT: Error in the VPN manager while changing state to \(enabled) - \(e)")
                     // if any of the following are found, break the switch
                     switch e.code {
                     case .configurationDisabled:
@@ -188,11 +194,11 @@ class TunnelController: NSObject {
                 }
                 // if its a regular error, then just log it
                 else if let e = error {
-                    DDLogError("There was error saving the VPN config when changing state to \(enabled): \(e)")
+                    NSLog("TBT: There was error saving the VPN config when changing state to \(enabled) - \(e)")
                 }
                 // if nothing goes wrong
                 else {
-                    DDLogInfo("Succesfully saved the VPN state change to \(enabled)")
+                    NSLog("TBT: Succesfully saved the VPN state change to \(enabled)")
                     
                     // wait 1.5s
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -212,7 +218,7 @@ class TunnelController: NSObject {
                         }
                         // if there is an error then log it and go on your merry way
                         catch {
-                            DDLogError("Unable to start the tunnel after saving: " + error.localizedDescription)
+                            NSLog("TBT: Unable to start the tunnel after saving - " + error.localizedDescription)
                         }
                     }
                     

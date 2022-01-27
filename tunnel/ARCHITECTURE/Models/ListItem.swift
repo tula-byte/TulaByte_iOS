@@ -18,3 +18,11 @@ class BlockListItem: ListItem {
 
 class AllowListItem: ListItem {
 }
+
+// List options
+enum TulaList {
+    case allow //index 0
+    case block //index 1
+    case other //index 2
+}
+

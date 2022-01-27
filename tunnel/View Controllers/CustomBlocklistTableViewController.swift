@@ -322,25 +322,25 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
         let i = indexPath.row
         let domain = filteredListArray[i]
         
-        var key:String {
+        var key: TulaList {
             switch scListOption.selectedSegmentIndex{
             case 0:
-                return tulabyteBlocklistKey
+                return .block
             case 1:
-                return tulabyteAllowlistKey
+                return .allow
             default:
-                return ""
+                return .block
             }
         }
         
-        var oppositeKey:String {
+        var oppositeKey: TulaList {
             switch scListOption.selectedSegmentIndex{
             case 0:
-                return tulabyteAllowlistKey
+                return .allow
             case 1:
-                return tulabyteBlocklistKey
+                return .block
             default:
-                return ""
+                return .block
             }
         }
         
@@ -363,7 +363,8 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
             previewProvider: nil) { _ in
                 
                 let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                    disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    //disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    deleteItemFromList(url: self.listArray[self.listArray.firstIndex(of: domain)!], list: key)
                     
                     self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
                         //check whether an element contains the search term and return a boolean to confirm this
@@ -375,9 +376,11 @@ class CustomBlocklistTableViewController: UITableViewController, UIDocumentPicke
                 }
                 
                 let swapListAction = UIAction(title: "Move to \(oppositeListTitle)list", image: UIImage(systemName: "arrow.left.arrow.right")) { _ in
-                    setAllowlistDomain(dKey: oppositeKey, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    //setAllowlistDomain(dKey: oppositeKey, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    addItemToList(url: self.listArray[self.listArray.firstIndex(of: domain)!], list: oppositeKey)
                     
-                    disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    //disableListDomain(dKey: key, domain: self.listArray[self.listArray.firstIndex(of: domain)!])
+                    deleteItemFromList(url: self.listArray[self.listArray.firstIndex(of: domain)!], list: key)
                     
                     self.filteredListArray = (self.searchBar.text == "") ? self.listArray : self.listArray.filter({ (searchTerm: String) -> Bool in
                         //check whether an element contains the search term and return a boolean to confirm this

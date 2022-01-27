@@ -18,7 +18,6 @@
 		DC38B03A25D3634700012733 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC38B03925D3634700012733 /* RealmSwift */; };
 		DC38B03D25D363CC00012733 /* BlockLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC088E7125D35EB000E8857B /* BlockLogItem.swift */; };
 		DC38B04125D3641700012733 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
-		DC38B04225D3641700012733 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
 		DC3C93072647871D007641A8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C93062647871D007641A8 /* StoreKit.framework */; };
 		DC448142277325D500025BD3 /* TunnelKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC448141277325D500025BD3 /* TunnelKit */; };
 		DC448144277325D500025BD3 /* TunnelKitIKE in Frameworks */ = {isa = PBXBuildFile; productRef = DC448143277325D500025BD3 /* TunnelKitIKE */; };
@@ -39,7 +38,6 @@
 		DC642C962612D6C300CF2C51 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C952612D6C300CF2C51 /* SettingsViewController.swift */; };
 		DC642C9C2612D6D000CF2C51 /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC642C9B2612D6D000CF2C51 /* DirectoryViewController.swift */; };
 		DC78CACE25DDEA77006BB5C9 /* TulaEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CACD25DDEA77006BB5C9 /* TulaEntryView.swift */; };
-		DC78CB2225DDFE5E006BB5C9 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
 		DC78CB2625DDFE76006BB5C9 /* BlockLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC088E7125D35EB000E8857B /* BlockLogItem.swift */; };
 		DC7F3AE52679914900806269 /* CustomBlocklistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F3AE42679914900806269 /* CustomBlocklistTableViewController.swift */; };
 		DC8B1295267C5018000A2062 /* tun2socks in Frameworks */ = {isa = PBXBuildFile; productRef = DC8B1294267C5018000A2062 /* tun2socks */; };
@@ -71,6 +69,12 @@
 		DCB2F90525C8DE2F0049D9EF /* TunnelUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2F90125C8DE2F0049D9EF /* TunnelUtilities.swift */; };
 		DCC50DC92615845100BC472F /* TulaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9BB43826156F800095C45D /* TulaButton.swift */; };
 		DCC50DCE2615845100BC472F /* TulaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9BB43826156F800095C45D /* TulaButton.swift */; };
+		DCC73EDA2797DBBA0032DC4E /* MonitorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC73ED92797DBBA0032DC4E /* MonitorListViewController.swift */; };
+		DCC73EDC2797DE520032DC4E /* MonitorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC73EDB2797DE520032DC4E /* MonitorItem.swift */; };
+		DCC73EDD2797E8E70032DC4E /* MonitorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC73EDB2797DE520032DC4E /* MonitorItem.swift */; };
+		DCC73EDE2797E9120032DC4E /* MonitorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC73EDB2797DE520032DC4E /* MonitorItem.swift */; };
+		DCC73EE12797F5C20032DC4E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
+		DCC73EE22797F5C20032DC4E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38B04025D3641700012733 /* RealmUtilities.swift */; };
 		DCC90B00261BEA2B00F07E0F /* InterfaceUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC90AFF261BEA2B00F07E0F /* InterfaceUtilities.swift */; };
 		DCC90B06261BF2C000F07E0F /* TulaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC90B05261BF2C000F07E0F /* TulaTextField.swift */; };
 		DCC90B0C261C1E3300F07E0F /* TulaSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC90B0B261C1E3300F07E0F /* TulaSC.swift */; };
@@ -440,6 +444,8 @@
 		DCB2F88D25C8DC5F0049D9EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCB2F88E25C8DC5F0049D9EF /* tunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tunnelProvider.entitlements; sourceTree = "<group>"; };
 		DCB2F90125C8DE2F0049D9EF /* TunnelUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelUtilities.swift; sourceTree = "<group>"; };
+		DCC73ED92797DBBA0032DC4E /* MonitorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListViewController.swift; sourceTree = "<group>"; };
+		DCC73EDB2797DE520032DC4E /* MonitorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorItem.swift; sourceTree = "<group>"; };
 		DCC90AFF261BEA2B00F07E0F /* InterfaceUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceUtilities.swift; sourceTree = "<group>"; };
 		DCC90B05261BF2C000F07E0F /* TulaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TulaTextField.swift; sourceTree = "<group>"; };
 		DCC90B0B261C1E3300F07E0F /* TulaSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TulaSC.swift; sourceTree = "<group>"; };
@@ -655,6 +661,7 @@
 				DC088E7125D35EB000E8857B /* BlockLogItem.swift */,
 				DCF8B4C6262416AB002E843A /* DirectoryItem.swift */,
 				DC5C4AD727880EB9009A154C /* ListItem.swift */,
+				DCC73EDB2797DE520032DC4E /* MonitorItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -696,6 +703,7 @@
 				DC642C9B2612D6D000CF2C51 /* DirectoryViewController.swift */,
 				DCFED8AA2614630400529AAB /* WidgetPreviewViewController.swift */,
 				DC7F3AE42679914900806269 /* CustomBlocklistTableViewController.swift */,
+				DCC73ED92797DBBA0032DC4E /* MonitorListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1483,6 +1491,7 @@
 				DCEE2631267C4BC2003EA9DB /* ProxyServer.swift in Sources */,
 				DCEE2586267C46ED003EA9DB /* HTTPAdapter.swift in Sources */,
 				DCEE2573267C46E9003EA9DB /* DNSSessionMatchResult.swift in Sources */,
+				DCC73EDA2797DBBA0032DC4E /* MonitorListViewController.swift in Sources */,
 				DCEE25B9267C4709003EA9DB /* QueueFactory.swift in Sources */,
 				DC642C842612D69700CF2C51 /* TunnelSetupViewController.swift in Sources */,
 				DCEE25C3267C470F003EA9DB /* Buffer.swift in Sources */,
@@ -1514,6 +1523,7 @@
 				DCB2F83E25C8D4930049D9EF /* AppDelegate.swift in Sources */,
 				DC33FE1C2622BD010090D1EE /* TulaShareView.swift in Sources */,
 				DCEE2607267C4B9B003EA9DB /* DNSMessage.swift in Sources */,
+				DCC73EDC2797DE520032DC4E /* MonitorItem.swift in Sources */,
 				DCEE25AF267C4703003EA9DB /* SOCKS5ProxySocket.swift in Sources */,
 				DCEE2627267C4BC2003EA9DB /* RawTCPSocketProtocol.swift in Sources */,
 				DCEE253E267C3E64003EA9DB /* Opt.swift in Sources */,
@@ -1628,6 +1638,7 @@
 				DCEE25AB267C46F8003EA9DB /* ProtocolObfuscater.swift in Sources */,
 				DCB2F88C25C8DC5F0049D9EF /* PacketTunnelProvider.swift in Sources */,
 				DCEE25B5267C4705003EA9DB /* SocketProtocol.swift in Sources */,
+				DCC73EE12797F5C20032DC4E /* RealmUtilities.swift in Sources */,
 				DCEE25CE267C4710003EA9DB /* IPInterval.swift in Sources */,
 				DCEE25B7267C4705003EA9DB /* HTTPProxySocket.swift in Sources */,
 				DCEE25CD267C4710003EA9DB /* IPMask.swift in Sources */,
@@ -1648,7 +1659,6 @@
 				DCEE2618267C4B9B003EA9DB /* TCPMutablePacket.swift in Sources */,
 				DCEE2600267C4B9B003EA9DB /* TUNInterface.swift in Sources */,
 				DCEE2545267C3E64003EA9DB /* GlobalIntializer.swift in Sources */,
-				DC38B04225D3641700012733 /* RealmUtilities.swift in Sources */,
 				DCEE25A2267C46F3003EA9DB /* ServerAdapterFactory.swift in Sources */,
 				DCEE2591267C46EE003EA9DB /* SOCKS5Adapter.swift in Sources */,
 				DCEE257B267C46EA003EA9DB /* AllRule.swift in Sources */,
@@ -1668,6 +1678,7 @@
 				DCEE25D0267C4710003EA9DB /* Checksum.swift in Sources */,
 				DCEE2559267C46D6003EA9DB /* Libsodium.swift in Sources */,
 				DCEE25E7267C47D5003EA9DB /* Resolver.swift in Sources */,
+				DCC73EDD2797E8E70032DC4E /* MonitorItem.swift in Sources */,
 				DCEE25B6267C4705003EA9DB /* DirectProxySocket.swift in Sources */,
 				DCEE25FE267C4B9B003EA9DB /* TCPStack.swift in Sources */,
 				DCEE257C267C46EA003EA9DB /* DNSSessionMatchType.swift in Sources */,
@@ -1682,7 +1693,8 @@
 				DC62BD1D25DE27EA0091E991 /* TunnelUtilities.swift in Sources */,
 				DC5C4ADD278957C5009A154C /* ListItem.swift in Sources */,
 				DC78CB2625DDFE76006BB5C9 /* BlockLogItem.swift in Sources */,
-				DC78CB2225DDFE5E006BB5C9 /* RealmUtilities.swift in Sources */,
+				DCC73EDE2797E9120032DC4E /* MonitorItem.swift in Sources */,
+				DCC73EE22797F5C20032DC4E /* RealmUtilities.swift in Sources */,
 				DC78CACE25DDEA77006BB5C9 /* TulaEntryView.swift in Sources */,
 				DCC9158825DB867D00F543FF /* widget.intentdefinition in Sources */,
 				DCC9158325DB867B00F543FF /* widget.swift in Sources */,
@@ -1873,7 +1885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1903,7 +1915,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2026,7 +2038,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.tunnelProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2055,7 +2067,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.tunnelProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2082,7 +2094,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2107,7 +2119,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulabyte.tulabyte.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -28,6 +28,7 @@ class TunnelSetupViewController: UIViewController {
             //setup lists for the first time
             setupTulaByteAllowList()
             setupTulaByteBlockList()
+            defaults.set(true, forKey: listsV2Key)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.dismiss(animated: true, completion: nil)

@@ -790,11 +790,10 @@
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="defaultIndex">
-                            <integer key="value" value="1"/>
+                            <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="Zv5-X4-Zib" kind="relationship" relationship="viewControllers" id="hda-mk-T9l"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Rm-hz-Ayc"/>
                         <segue destination="aSi-0v-gri" kind="relationship" relationship="viewControllers" id="maP-Ig-HeQ"/>
                     </connections>
@@ -1072,6 +1071,16 @@
             </objects>
             <point key="canvasLocation" x="277" y="1875"/>
         </scene>
+        <!--Monitor-->
+        <scene sceneID="A7J-8W-xFt">
+            <objects>
+                <hostingController id="uDA-O4-idc" customClass="MonitorListViewController" customModule="tunnel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Monitor" image="eyeglasses" catalog="system" id="QYI-ri-gpP"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVe-E2-1cq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3513" y="1875"/>
+        </scene>
         <!--Directory-->
         <scene sceneID="4U0-Zi-Md4">
             <objects>
@@ -1125,7 +1134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ma-sR-Dmr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4459" y="1875"/>
+            <point key="canvasLocation" x="-5136" y="2482"/>
         </scene>
         <!--Directory-->
         <scene sceneID="4gf-72-SPy">
@@ -1144,7 +1153,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhy-eH-shp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3262" y="1875"/>
+            <point key="canvasLocation" x="-5135" y="1765"/>
         </scene>
         <!--In App Audience View Controller-->
         <scene sceneID="Rkg-uE-43X">
@@ -1348,6 +1357,7 @@
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="eyeglasses" catalog="system" width="128" height="54"/>
         <image name="figure.stand.line.dotted.figure.stand" catalog="system" width="128" height="83"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>

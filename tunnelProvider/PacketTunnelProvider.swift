@@ -35,18 +35,23 @@ class TulaByteTunnelObserverFactory: ObserverFactory {
                  */
                 
                 if isDomainInList(url: session.host, list: .allow) {
+                    NSLog("TBT BLOCKER: \(session.host) ALLOWED")
+                    //addItemToMonitorList(url: session.host, list: .allow)
                     return
                 }
                 
                 if (defaults.value(forKey: "userEnabledFirewall") != nil) == true {
                     if isDomainInList(url: session.host, list: .block) {
                         addBlockLogItem(url: session.host)
+                        //addItemToMonitorList(url: session.host, list: .block)
                         NSLog("TBT BLOCKER:" + session.host + "BLOCKED")
                         socket.forceDisconnect()
                         return
                     }
                 }
-                print("TBT BLOCKER: \(session.host) ALLOWED")
+                
+                NSLog("TBT BLOCKER: \(session.host) ALLOWED")
+                //addItemToMonitorList(url: session.host)
                 return
                 
             default:

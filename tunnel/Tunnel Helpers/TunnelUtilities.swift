@@ -7,7 +7,26 @@
 
 import Foundation
 
-//MARK: - GLOBAL
+//MARK: - List Engine Trasition
+
+func updateListEngine(){
+    /// This function shoudl only be run once for users who've used the app before
+    
+    //get old lists
+    let oldBlockList = getBlocklistArray()
+    let oldAllowList = getAllowlistArray()
+    
+    //setup new lists
+    setupTulaByteBlockList()
+    setupTulaByteAllowList()
+    
+    //merge domains from old list
+    addItemsToList(urls: oldBlockList, userAdded: false, list: .block)
+    addItemsToList(urls: oldAllowList, userAdded: false, list: .allow)
+}
+
+
+//MARK: - GLOBAL (DEPRECATED)
 //VARIABLES
 let testFirewallDomain = "example.com"
 let defaults = UserDefaults.shared
@@ -30,7 +49,7 @@ func disableListDomain(dKey: String, domain: String){
     setAllowlistDomain(dKey: dKey, domain: domain, enabled: false)
 }
 
-//MARK: - ALLLOWLIST
+//MARK: - ALLLOWLIST (DEPRECATED)
 
 // CONSTANTS
 let tulabyteAllowlistKey = "tulabyteAllowlist"
@@ -169,7 +188,7 @@ func getAllowlistArray() -> Array<String> {
     return domains
 }
 
-//MARK: - BLOCKLIST
+//MARK: - BLOCKLIST (DEPRECATED)
 
 //CONSTANTS
 let tulabyteBlocklistKey = "tulabyteBlocklist"
