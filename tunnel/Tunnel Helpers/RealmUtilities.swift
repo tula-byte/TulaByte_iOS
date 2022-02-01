@@ -64,17 +64,21 @@ func retrieveGroupedCount() -> Array<(url: String, count: Int)> {
     
     let blockLog = realm.objects(BlockLogItem.self).sorted(byKeyPath: "timestamp", ascending: false)
     
-    let groupedLog = Dictionary(grouping: blockLog, by: {$0.url})
-    
-    var groupedLogCount = Array<(url: String, count: Int)>()
-    
-    for (key, value) in groupedLog {
-        groupedLogCount.append((url: key, count: value.count))
+    if blockLog.count != 0 {
+        let groupedLog = Dictionary(grouping: blockLog, by: {$0.url})
+        
+        var groupedLogCount = Array<(url: String, count: Int)>()
+        
+        for (key, value) in groupedLog {
+            groupedLogCount.append((url: key, count: value.count))
+        }
+        
+        groupedLogCount.sort(by: {$0.count > $1.count})
+        
+        return groupedLogCount
     }
-    
-    groupedLogCount.sort(by: {$0.count > $1.count})
-    
-    return groupedLogCount
+    NSLog("TBT: There was nothing in the blocklog, so GROUPED COUNT returned empty")
+    return []
 }
 
 func retrieveGroupedCountToday() -> Array<(url: String, count: Int)> {
@@ -83,7 +87,7 @@ func retrieveGroupedCountToday() -> Array<(url: String, count: Int)> {
     let todayStart = Calendar.current.startOfDay(for: Date())
     
     let blockLog = realm.objects(BlockLogItem.self).filter("timestamp >= %@", todayStart).sorted(byKeyPath: "timestamp", ascending: false)
-    
+    if blockLog.count != 0 {
     let groupedLog = Dictionary(grouping: blockLog, by: {$0.url})
     
     var groupedLogCount = Array<(url: String, count: Int)>()
@@ -95,6 +99,9 @@ func retrieveGroupedCountToday() -> Array<(url: String, count: Int)> {
     groupedLogCount.sort(by: {$0.count > $1.count})
     
     return groupedLogCount
+    }
+    NSLog("TBT: There was nothing in the blocklog, so GROUPED COUNT TODAY returned empty")
+    return []
 }
 
 func clearBlockLog() {
