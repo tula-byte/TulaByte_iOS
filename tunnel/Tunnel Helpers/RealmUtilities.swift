@@ -314,7 +314,7 @@ func isDomainInList(url: String, list: TulaList) -> Bool {
         let allowlist = realm.objects(AllowListItem.self)
         
         let value = allowlist.where {
-            ($0.url.ends(with: url)) || ($0.url == url)
+            ($0.url.ends(with: ".\(url)")) || ($0.url == url)
         }
         
         if value.count >= 1 {
@@ -325,10 +325,11 @@ func isDomainInList(url: String, list: TulaList) -> Bool {
         let blocklist = realm.objects(BlockListItem.self)
         
         let value = blocklist.where {
-            ($0.url.ends(with: url)) || ($0.url == url)
+            ($0.url.ends(with: ".\(url)")) || ($0.url == url)
         }
         
         if value.count >= 1 {
+            NSLog("TBT DB: \(url) matched to \(value.first!.url)")
             return true
         }
     }

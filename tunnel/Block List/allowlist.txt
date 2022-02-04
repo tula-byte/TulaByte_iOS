@@ -22,7 +22,6 @@ cloudfront.net
 cloudfront.net
 coinbase.com
 comcast.net
-confirmedvpn.com
 creditkarma.com
 digicert.com
 disney-plus.net
@@ -137,3 +136,10 @@ naver.com
 booking.com
 techcrunch.com
 medium.com
+unsplash.com
+weather.com
+discord.com
+cdn.discordapp.com
+gateway.discord.gg
+discord.media
+
